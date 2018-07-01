@@ -1,0 +1,39 @@
+$box-color: #29475B
+
+.newpost
+  $caption-color: #81ffdf
+
+  background: $box-color
+  &__caption
+    font-size: 17px
+    color: $caption-color
+    border-bottom: 1px double $caption-color
+
+  &__item
+    &--title
+      background: rgba(0,0,0,.3)
+      h6
+        //white-space: nowrap
+        //overflow: hidden
+        //text-overflow: ellipsis
+
+.topview
+  $caption-color: #81ffdf
+
+  background: $box-color
+  &__caption
+    font-size: 17px
+    color: $caption-color
+    border-bottom: 1px double $caption-color
+  &__list
+    .rank
+      $site: 25px
+      span
+        //width: $site
+        //height: $site
+        background: #fff601
+    a
+      font-size: 11px
+      line-height: 12px
+    i
+      font-size: 12px

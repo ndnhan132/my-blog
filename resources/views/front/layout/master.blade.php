@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/test.css')}}">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 </head>
 <body>
@@ -24,13 +26,14 @@
             <div class="col-9 test2" style="height: 750px; ">
                 content
             </div>
-            <div class="col-3 test2" >
-                <div class=" mt-2 d-flex flex-column test1 rounded">
-                    <div class="test3">
+            {{-- hot, new --}}
+            <div class="col-3 px-2" >
+                <div class=" mt-2 d-flex flex-column">
+                    <div class=" newpost p-2 pb-3">
                         @include('front.layout.new-post')
                     </div>
-                    <div class="test3 mt-2" style="height: 200px;">
-                        HOT
+                    <div class="mt-2 topview p-2 pb-3">
+                        @include('front.layout.top-view')
                     </div>
                 </div>
             </div>

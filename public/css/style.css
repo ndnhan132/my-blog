@@ -1,18 +1,24 @@
-body {
-background: #eee; 
-}
-.test1 {
-width: 100% ; 
-background: #ABABAB; 
-}
-.test2 {
-margin-top: 3px; 
-border: 1px solid #000; 
-width: 100% ; 
-background: #fff; 
-}
-.test3 {
-   width: 100%;
-   border-radius: 15px;
-   /*background: #4E574D;*/
-}
+.newpost {
+  background: #29475B; }
+  .newpost__caption {
+    font-size: 17px;
+    color: #81ffdf;
+    border-bottom: 1px double #81ffdf; }
+  .newpost__item--title {
+    background: rgba(0, 0, 0, 0.3); }
+
+.topview {
+  background: #29475B; }
+  .topview__caption {
+    font-size: 17px;
+    color: #81ffdf;
+    border-bottom: 1px double #81ffdf; }
+  .topview__list .rank span {
+    background: #fff601; }
+  .topview__list a {
+    font-size: 11px;
+    line-height: 12px; }
+  .topview__list i {
+    font-size: 12px; }
+
+/*# sourceMappingURL=style.css.map */

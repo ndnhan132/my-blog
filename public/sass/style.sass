@@ -12,11 +12,6 @@ $box-color: #29475B
   &__item
     &--title
       background: rgba(0,0,0,.3)
-      h6
-        //white-space: nowrap
-        //overflow: hidden
-        //text-overflow: ellipsis
-
 .topview
   $caption-color: #81ffdf
 
@@ -27,13 +22,20 @@ $box-color: #29475B
     border-bottom: 1px double $caption-color
   &__list
     .rank
-      $site: 25px
       span
-        //width: $site
-        //height: $site
         background: #fff601
     a
       font-size: 11px
       line-height: 12px
     i
       font-size: 12px
+.profile
+  $title-bg: #3c763d
+  &__title
+    background: $title-bg
+  ul
+    li
+      border-radius: 0px
+      padding: 10px 15px
+      font-size: 14px
+      color: $title-bg

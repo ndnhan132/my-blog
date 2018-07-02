@@ -21,4 +21,12 @@
   .topview__list i {
     font-size: 12px; }
 
+.profile__title {
+  background: #3c763d; }
+.profile ul li {
+  border-radius: 0px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #3c763d; }
+
 /*# sourceMappingURL=style.css.map */

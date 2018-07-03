@@ -1,5 +1,6 @@
-<div class="col-9 test2" style="height: 750px; ">
-    content Right
+
+<div class="col-9 test2">
+    @include('front.layout.home-content')
 </div>
 {{-- hot, new --}}
 <div class="col-3 px-2" >

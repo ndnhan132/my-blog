@@ -26,20 +26,21 @@
                 <li class="list-group-item py-2 profile__title rounded-0">
                     <span class="text-white">
                        <i class="fas fa-bars pr-1"></i>
-                      Tai khoan
+                        Bai viet
                     </span>
                 </li>
-                <a href="http://localhost:6789/profile/update">
-                    <li class="list-group-item rounded-0">cap nhat</li>
+                <a href="">
+                    <li class="list-group-item rounded-0">Chung</li>
                 </a>
-                <a href="http://localhost:6789/profile/update">
-                    <li class="list-group-item rounded-0">cap nhat</li>
+                <a href="">
+                    <li class="list-group-item rounded-0">Dang bai</li>
                 </a>
-                <a href="http://localhost:6789/profile/update">
-                    <li class="list-group-item rounded-0">cap nhat</li>
+                <a href="">
+                    <li class="list-group-item rounded-0">Quan ly</li>
                 </a>
-                <a href="http://localhost:6789/profile/update">
-                    <li class="list-group-item rounded-0">cap nhat</li>
+                <a href="">
+                    <li class="list-group-item rounded-0">Khac</li>
+>>>>>>> origin/nhan-win
                 </a>
             </ul>
         </div>

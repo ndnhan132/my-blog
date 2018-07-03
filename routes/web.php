@@ -26,4 +26,10 @@ Route::get('/profile/update' , function (){
 });
 Route::get('/profile/account', function (){
     return view('front.profile-account');
+<<<<<<< HEAD
+=======
+});
+Route::get('/admin', function(){
+    return view('admin.index');
+>>>>>>> origin/nhan-win
 });

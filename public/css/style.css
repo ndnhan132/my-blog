@@ -1,0 +1,32 @@
+.newpost {
+  background: #29475B; }
+  .newpost__caption {
+    font-size: 17px;
+    color: #81ffdf;
+    border-bottom: 1px double #81ffdf; }
+  .newpost__item--title {
+    background: rgba(0, 0, 0, 0.3); }
+
+.topview {
+  background: #29475B; }
+  .topview__caption {
+    font-size: 17px;
+    color: #81ffdf;
+    border-bottom: 1px double #81ffdf; }
+  .topview__list .rank span {
+    background: #fff601; }
+  .topview__list a {
+    font-size: 11px;
+    line-height: 12px; }
+  .topview__list i {
+    font-size: 12px; }
+
+.profile__title {
+  background: #3c763d; }
+.profile ul li {
+  border-radius: 0px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #3c763d; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,6 @@
-@extends('front.layout.profile-master')
-@section('profile-content')
-
+@extends('front.layout.manage-master')
+@section('manage-content')
+<div class="manage__account">
     <div class="pt-4 border-bottom border-secondary rounded-bottom">
         <span class="text-uppercase p-1 text-dark">
             <i class="fas fa-wrench"></i>
@@ -37,5 +37,5 @@
             </div>
         </form>
     </div>
-
+</div>
 @endsection

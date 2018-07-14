@@ -1,0 +1,81 @@
+$box-color: #29475B;
+
+.home-content {
+  $caption-color: #81ffdf;
+  //background: $box-color;
+  &__left{
+    &__post{
+      &__vote{
+        font-size: 13px;
+        position: relative;
+        right: 0px;
+        bottom: 23px;
+      }
+    }
+  }
+  &__right{
+    &--dark{
+      background: #29475B;
+    }
+    &__newpost{
+      &__caption {
+          font-size: 17px;
+          color: $caption-color;
+          border-bottom: 1px double $caption-color;
+        }
+      &--transparent{
+        background: rgba(0, 0, 0, .3);
+      }
+    }
+    &__topview{
+      &__caption{
+        font-size: 17px;
+        color: $caption-color;
+        border-bottom: 1px double $caption-color;
+      }
+      &__list{
+        &--bgyellow{
+          background: #fff601;
+        }
+        a {
+          font-size: 11px;
+          line-height: 12px;
+        }
+        i {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.manage {
+  $title-bg: #3c763d;
+  &__title {
+    background: $title-bg;
+  }
+  ul li {
+      padding: 10px 15px;
+      font-size: 14px;
+      color: $title-bg;
+  }
+  &__detail{
+
+  }
+  &__account{
+
+  }
+  &__update{
+
+  }
+  &__article-info{
+
+  }
+  &__article-new{
+
+  }
+  &__article-manage{
+
+   }
+
+}

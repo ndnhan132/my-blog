@@ -1,14 +1,14 @@
-<div class="topview__caption">
+<div class="home-content__right__topview__caption mt-3">
     <span class="text-uppercase p-1">
         <i class="fas fa-bookmark"></i>
         pho bien nhat
     </span>
 </div>
-<ul class="topview__list p-1 d-flex flex-column">
+<ul class="home-content__right__topview__list p-1 d-flex flex-column">
     @for($i=1; $i<=10; $i++)
     <li class="d-flex border-bottom border-light rounded mt-2">
-        <div class="col-2 rank d-flex p-0 justify-content-center align-items-center">
-            <span class="text-center w-100 m-2 border">
+        <div class="col-2  d-flex p-0 justify-content-center align-items-center">
+            <span class="text-center w-100 m-2 border home-content__right__topview__list--bgyellow">
                 {{$i}}
             </span>
         </div>
@@ -23,3 +23,8 @@
     </li>
     @endfor
 </ul>
+
+
+<a href="http://localhost:6789/profile/account"> account</a>
+<a href="http://localhost:6789/profile/"> profile</a>
+<a href="http://localhost:6789/profile/update"> update</a>

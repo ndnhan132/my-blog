@@ -45,9 +45,9 @@
                 <textarea class="form-control col-9 rounded-0" name="" id="" cols="30" rows="4"></textarea>
             </div>
             <div class="form-group d-flex justify-content-center mt-4">
-                <button class="btn btn-outline-success mx-2" style="width: 80px" type="submit">Update</button>
-                <button class="btn btn-outline-danger mx-2" style="width: 80px" type="reset" value="Reset">Reset</button>
-                <button class="btn btn-outline-secondary mx-2" style="width: 80px" type="" >Back</button>
+                <button class="btn manage__btn--green rounded-0 mx-2" style="width: 80px" type="submit">Update</button>
+                <button class="btn manage__btn--green rounded-0 mx-2" style="width: 80px" type="reset" value="Reset">Reset</button>
+                <button class="btn manage__btn--green rounded-0 mx-2" style="width: 80px" type="" >Back</button>
             </div>
         </form>
     </div>

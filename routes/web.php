@@ -38,6 +38,24 @@ Route::prefix('/manage')->group(function (){
         return view('front.manage.manage-article-info');
     });
 });
-Route::get('/admin', function(){
-    return view('admin.index');
+Route::prefix('/admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+    Route::get('/profile', function (){
+        return view('admin.profile');
+    });
+    Route::get('/user', function (){
+        return view('admin.index');
+    });
+    Route::get('/article', function (){
+        return view('admin.index');
+    });
+    Route::get('/mailbox', function (){
+        return view('admin.mailbox');
+    });
+    Route::get('/table', function (){
+        return view('admin.table');
+    });
+
 });

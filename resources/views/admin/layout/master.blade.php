@@ -7,26 +7,20 @@
     <title>admin</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/css/test.css')}}">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 </head>
-<body style="background: #202020;">
+<body style=" padding-top: 52px; background:#eee;">
 <div class="container-fluid">
-    <div class="d-flex ">
-        <div class="col-3 border border-success" style="background: #535A6C; height: 100vh">
+    @include('admin.layout.header')
+</div>
+<div class="container-fluid px-0">
+    <div class="d-flex">
+        <div class="col-2 p-0 admin admin__menu-left admin__menu-left--bg-dark">
             @include('admin.layout.menu-left')
         </div>
-        <div class="col-9">
-            <div class="d-flex flex-column">
-                <div class="border border-danger">
-                    @include('admin.layout.top')
-                </div>
-                <div class="border border-primary">
-                    @section('content')
-
-                    @show
-                </div>    
-            </div>
+        <div class="col-10 p-0 admin admin__content ">
+            @section('admin-content')
+            @show
         </div>
     </div>
 </div>

@@ -51,6 +51,9 @@ $box-color: #29475B;
 
 .manage {
   $title-bg: #3c763d;
+  &__btn--green{
+    background: $title-bg;
+  }
   &__title {
     background: $title-bg;
   }
@@ -69,13 +72,70 @@ $box-color: #29475B;
 
   }
   &__article-info{
-
+    ul li{
+      font-size: 16px;
+    list-style-type: square;
+      padding: 7px 8px;
+    }
   }
   &__article-new{
 
   }
   &__article-manage{
+    ul li{
+      font-size: 16px;
+    }
 
    }
 
+}
+
+.admin{
+  $green: #3c763d;
+
+  &__button{
+    &--outline-none:focus{
+      outline: none!important;
+      box-shadow: none;
+    }
+  }
+
+  &--bg-green{
+    background: $green;
+  }
+  &__menu-left{
+    height: 75vh;
+    &--bg-dark{
+      background: #2A3F54;
+    }
+    &--bg-darklight{
+      background: #374A5E;
+    }
+    button{
+      font-size: 15px;
+    }
+  }
+  &__header{
+    &__search{
+      i{
+        color: green;
+      }
+    }
+    &__notify{
+      i{
+        padding: 7px;
+        font-size: 19px;
+      }
+      span{
+        padding: 1px;
+        font-size: 11px;
+        position: relative;
+        bottom: 12px;
+        right: 16px;
+      }
+    }
+
+  }
+  &__content{
+  }
 }

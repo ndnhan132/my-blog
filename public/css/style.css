@@ -53,14 +53,16 @@
     font-size: 15px; }
 .admin__header__search i {
   color: green; }
-.admin__header__notify i {
-  padding: 7px;
-  font-size: 19px; }
-.admin__header__notify span {
-  padding: 1px;
-  font-size: 11px;
-  position: relative;
-  bottom: 12px;
-  right: 16px; }
+.admin__header__notify {
+  max-width: 53px; }
+  .admin__header__notify i {
+    padding: 7px;
+    font-size: 19px; }
+  .admin__header__notify span {
+    padding: 1px;
+    font-size: 11px;
+    position: relative;
+    bottom: 12px;
+    right: 16px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -36,7 +36,7 @@ class User extends Authenticatable
 
 
     /**
-     * The roles that belong to the user.
+     * The roles that belong to the user. 123
      */
     public function roles()
     {

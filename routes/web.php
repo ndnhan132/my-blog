@@ -15,13 +15,14 @@ Route::get('/', function () {
     return view('front.index');
 });
 
+
+Route::get('/hh','UserController@index');
 // Route::get('/master', function () {
 //     return view('front.layout.master');
 // });
+Route::get('/home', 'ArticleController@home')->name('home');
 Route::prefix('/manage')->group(function (){
-    Route::get('/profile', function (){
-        return view('front.manage.manage-profile');
-    });
+    Route::get('/{id}/profile', 'UserController@userProfile')->name('user-profile');
     Route::get('/update', function (){
         return view('front.manage.manage-update');
     });

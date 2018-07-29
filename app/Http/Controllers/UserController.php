@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\User;
@@ -52,9 +51,8 @@ class UserController extends Controller
 
     public function logout(){
         $user_cookie= Cookie::get('user_cookie');
-        $user_cookie= Cookie::forget($user_cookie);
-
-//        return Redirect::to('/')->withCookie($user_cookie);
+        $cookie= Cookie::forget('user_cookie');
+        return redirect()->back()->withCookie($cookie);
     }
 
     public function profile(){
@@ -71,8 +69,8 @@ class UserController extends Controller
         $id= $request->cookie('user_cookie')->id;
         $user = new User();
         $user->userUpdate($id, $request);
-        $user_cookie= cookie('user_cookie', User::find($id), 20);
-        return response()->route('user-update')->withCookie($user_cookie);
+        $user_cookie= cookie('user_cookie', User::find($id), 30);
+        return redirect()->route('user-profile')->withCookie($user_cookie);
     }
     public function account(){
         return view('front.manage.manage-account');

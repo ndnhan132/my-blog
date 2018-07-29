@@ -10,25 +10,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Cookie;
 
-Route::get('/', function () {
-    return view('front.index');
-});
-
-
-Route::get('/hh','UserController@index');
-// Route::get('/master', function () {
-//     return view('front.layout.master');
-// });
+Route::get('/', 'ArticleController@home')->name('home');
 Route::get('/home', 'ArticleController@home')->name('home');
+Route::get('/{id}/detail', 'ArticleController@detail')->name('article-detail');
+
+Route::get('/register', 'UserController@create')->name('register');
+Route::post('/user/store', 'UserController@store')->name('user-store');
+Route::get('/login', 'UserController@getLogin')->name('get-login');
+Route::post('/login', 'UserController@postLogin')->name('post-login');
+
+Route::get('/profile', 'UserController@profile')->name('user-profile');
+Route::get('/edit', 'UserController@edit')->name('user-edit');
+Route::put('/update', 'UserController@update')->name('user-update');
+Route::get('/account', 'UserController@account')->name('user-account');
+Route::put('/account/update', 'UserController@accountUpdate')->name('user-account-update');
+Route::delete('/account/update', 'UserController@accountDelete')->name('user-account-delete');
+
+Route::get('/logout','UserController@logout')->name('logout');
+
+
+
+
 Route::prefix('/manage')->group(function (){
-    Route::get('/{id}/profile', 'UserController@userProfile')->name('user-profile');
-    Route::get('/update', function (){
-        return view('front.manage.manage-update');
-    });
-    Route::get('/account', function (){
-        return view('front.manage.manage-account');
-    });
     Route::get('/article/new', function (){
         return view('front.manage.manage-article-new');
     });

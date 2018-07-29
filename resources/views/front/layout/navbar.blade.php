@@ -7,9 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home
-                    <span class="sr-only">(current)</span>
-                </a>
+                <form action="{{route('home')}}" method="get">
+                    <button class="nav-link btn btn-link">Home
+                        <span class="sr-only">(current)</span>
+                    </button>
+                </form>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About</a>

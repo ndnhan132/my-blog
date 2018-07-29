@@ -13,4 +13,9 @@ class Comment extends Model
     public function article(){
         return $this->belongsTo('App\Article');
     }
+
+
+    public function getAbcAttribute(){
+        return "{$this->created_at}";
+    }
 }

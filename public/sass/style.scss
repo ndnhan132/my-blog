@@ -37,7 +37,7 @@ $box-color: #29475B;
         &--bgyellow{
           background: #fff601;
         }
-        a {
+        button {
           font-size: 11px;
           line-height: 12px;
         }
@@ -59,8 +59,10 @@ $box-color: #29475B;
   }
   ul li {
       padding: 10px 15px;
-      font-size: 14px;
-      color: $title-bg;
+      button{
+        font-size: 16px;
+        color: $title-bg;
+      }
   }
   &__detail{
 

@@ -19,16 +19,16 @@ class ArticlesTableSeeder extends Seeder
 
         $users= User::all();
 
-        foreach (range(1,50) as $index){
+        foreach (range(1,20) as $index){
             Article::create([
                 'title'=>$faker->paragraph($nbSentences = 1, $variableNbSentences = true),
                 'user_id'=>$faker->randomElement($users->pluck('id')->toArray()),
-                'content'=> $faker->paragraph(20),
-                'img'=>$faker->imageUrl($width = 640, $height = 480),
-                'view'=>123,
-                'like'=>123,
-                'report'=>123,
-                'dislike'=>123,
+                'content'=> $faker->paragraph(50),
+                'img'=>'http://viemtuyentienliet.org/wp-content/uploads/2016/05/ngua-hau-mon-o-tre-em-va-meo-chua-tri-1.jpg',
+                'view'=>$faker->numberBetween($min = 1, $max = 9000),
+                'like'=>$faker->numberBetween($min = 1, $max = 9000),
+                'report'=>$faker->numberBetween($min = 1, $max = 9000),
+                'dislike'=>$faker->numberBetween($min = 1, $max = 9000),
             ]);
         }
     }

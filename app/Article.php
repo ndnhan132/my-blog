@@ -8,10 +8,12 @@ use Carbon\Carbon;
 class Article extends Model
 {
     //
-    public function getCreatedAtAttribute( $value){
-        return $value->toFormattedDateString();
-    }
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
 
     public function user(){
@@ -20,4 +22,16 @@ class Article extends Model
     public function comment(){
         return $this->hasMany('App\Comment');
     }
+
+    public function getCreatedAtAttribute($value){
+        return date("Y-m-d", strtotime($value));
+    }
+//    public function getTitleAttribute($value){
+//        return 'fsdaf' . $value;
+//    }
+//    public function getViewAttribute($value){
+//        return $value * 100;
+//    }
+
+
 }

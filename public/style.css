@@ -28,10 +28,9 @@
 .manage__title {
   background: #3c763d; }
 .manage ul li {
-  padding: 10px 15px; }
-  .manage ul li button {
-    font-size: 16px;
-    color: #3c763d; }
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #3c763d; }
 .manage__article-info ul li {
   font-size: 16px;
   list-style-type: square;

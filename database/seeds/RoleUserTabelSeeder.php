@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Role
-use App\User
+//use App\Role
+//use App\User
 
 class RoleUserTabelSeeder extends Seeder
 {
@@ -13,11 +13,11 @@ class RoleUserTabelSeeder extends Seeder
      */
     public function run()
     {
-        $role = Role::all();
-        User::all()->each(function ($user) as ($role) {
-            $user->role()->attach(
-                $role->random(rand(1, 2))->pluck('id')->toArray()
-            );
-        });
+//        $role = Role::all();
+//        User::all()->each(function ($user) as ($role) {
+//            $user->role()->attach(
+//                $role->random(rand(1, 2))->pluck('id')->toArray()
+//            );
+//        });
     }
 }

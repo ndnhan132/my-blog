@@ -11,21 +11,21 @@
 </head>
 <body>
 {{--header--}}
-<div class="container border">
+<div class="container">
     @include('front.layout.header')
 </div>
 {{--nav-bar--}}
-<div class="container border">
+<div class="container">
     @include('front.layout.navbar')
 </div>
 {{--content--}}
-<div class="container border">
+<div class="container pt-3">
     @section('content')
 
     @show
 </div>
 {{--footer--}}
-<div class="container border">
+<div class="container">
 {{--    @include('front.layout')--}}
 </div>
 

@@ -9,18 +9,21 @@
                       Tai khoan
                     </span>
                 </li>
-                <a href="http://localhost:6789/manage/profile">
-                    <li class="list-group-item rounded-0">Ho so</li>
-                </a>
-                <a href="http://localhost:6789/manage/update">
-                    <li class="list-group-item rounded-0">Cap nhat</li>
-                </a>
-                <a href="http://localhost:6789/manage/account">
-                    <li class="list-group-item rounded-0">Quan ly tai khoan</li>
-                </a>
-                <a href="">
-                    <li class="list-group-item rounded-0">khac</li>
-                </a>
+                <form method="get" action="{{route('user-profile')}}">
+                    <li class="list-group-item rounded-0">
+                        <button class="btn btn-link p-0">Ho so</button>
+                    </li>
+                </form>
+                <form method="get" action="{{route('user-edit')}}">
+                    <li class="list-group-item rounded-0">
+                        <button class="btn btn-link p-0">Cap nhat</button>
+                    </li>
+                </form>
+                <form method="get" action="{{route('user-account')}}">
+                    <li class="list-group-item rounded-0">
+                        <button class="btn btn-link p-0">Quan ly tai khoan</button>
+                    </li>
+                </form>
             </ul>
             <ul class="list-group rounded-0 pt-4 px-2">
                 <li class="list-group-item py-2 manage__title rounded-0">

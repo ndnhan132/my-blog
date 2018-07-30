@@ -51,7 +51,12 @@ class User extends Authenticatable
     public function user(){
         return $this->hasOne('App\Comment');
     }
-    public function role()
+
+
+    /**
+     * The roles that belong to the user.
+     */
+    public function roles()
     {
         return $this->belongsToMany(Role::class);
     }

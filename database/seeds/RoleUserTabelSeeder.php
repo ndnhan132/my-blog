@@ -13,11 +13,11 @@ class RoleUserTabelSeeder extends Seeder
      */
     public function run()
     {
-//        $role = Role::all();
-//        User::all()->each(function ($user) as ($role) {
-//            $user->role()->attach(
-//                $role->random(rand(1, 2))->pluck('id')->toArray()
-//            );
-//        });
+       $role = Role::all();
+       User::all()->each(function ($user) use ($role) {
+           $user->role()->attach(
+               $role->random(rand(1, 2))->pluck('id')->toArray()
+           );
+       });
     }
 }

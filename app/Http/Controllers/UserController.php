@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\URL;
 class UserController extends Controller
 {
     //
+<<<<<<< HEAD
     public function create(){
         return view('front.register');
     }
@@ -81,6 +82,10 @@ class UserController extends Controller
     }
     public function account(){
         return view('front.manage.manage-account');
+=======
+    public function index () {
+        
+>>>>>>> origin/thien
     }
     public function accountUpdate(){}
     public function accountDelete(){

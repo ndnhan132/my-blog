@@ -24,7 +24,7 @@ class ArticlesTableSeeder extends Seeder
                 'title'=>$faker->paragraph($nbSentences = 1, $variableNbSentences = true),
                 'user_id'=>$faker->randomElement($users->pluck('id')->toArray()),
                 'content'=> $faker->paragraph(50),
-                'img'=>'http://viemtuyentienliet.org/wp-content/uploads/2016/05/ngua-hau-mon-o-tre-em-va-meo-chua-tri-1.jpg',
+                'img'=>$faker->imageUrl($width = 640, $height = 480),
                 'view'=>$faker->numberBetween($min = 1, $max = 9000),
                 'like'=>$faker->numberBetween($min = 1, $max = 9000),
                 'report'=>$faker->numberBetween($min = 1, $max = 9000),

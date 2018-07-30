@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
                 'gender'=>$faker->randomElement($array = array ('0','1')),
                 'phone'=>$faker->e164PhoneNumber,
                 'address'=>$faker->address,
-                'img'=>'https://cdn.dribbble.com/users/199982/screenshots/4044699/furkan-avatar-dribbble_1x.png',
+                'img'=>$faker->imageUrl($width = 640, $height = 480),
                 'description'=>$faker->paragraph($nbSentences = 1, $variableNbSentences = true),
             ]);
         }

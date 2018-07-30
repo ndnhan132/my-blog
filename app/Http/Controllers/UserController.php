@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     //
     public function index () {
-        dd(User::all());
+        
     }
     public function userProfile(){
 

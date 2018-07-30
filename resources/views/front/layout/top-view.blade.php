@@ -23,11 +23,3 @@
     </li>
     @endfor
 </ul>
-
-
-<a href="http://localhost:6789/manage/account"> account</a>
-<a href="http://localhost:6789/manage/profile"> profile</a>
-<a href="http://localhost:6789/manage/update"> update</a>
-<a href="http://localhost:6789/manage/article/new"> new</a>
-<a href="http://localhost:6789/manage/article/manage">manage</a>
-<a href="http://localhost:6789/manage/article/info"> info</a>

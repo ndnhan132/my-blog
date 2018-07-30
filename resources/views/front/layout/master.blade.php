@@ -11,15 +11,14 @@
 </head>
 <body>
 {{--header--}}
-<div class="container border">
+<div class="container">
     @include('front.layout.header')
 </div>
+
+<div class="container p-0" style="background-color: #eee; box-shadow: 0 0 10px #ddd;">
 {{--nav-bar--}}
-<div class="container border">
     @include('front.layout.navbar')
-</div>
 {{--content--}}
-<div class="container border">
     @section('content')
 
     @show

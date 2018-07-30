@@ -8,12 +8,8 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     //
-    public function home(){
-        $articles= Article::select()->limit(10)->get();
+    public function home() {
+        $articles = Article::select()->limit(10)->get();
         return view('front.index', ['articles'=> $articles]);
     }
-
-
-
-
 }

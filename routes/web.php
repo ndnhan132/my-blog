@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front.index');
-});
+// Route::get('/', function () {
+//     return view('front.index');
+// });
+// Route::get('/','ArticleController@home');
 
-
-Route::get('/hh','UserController@index');
+// Route::get('/hh','UserController@index');
 // Route::get('/master', function () {
 //     return view('front.layout.master');
 // });

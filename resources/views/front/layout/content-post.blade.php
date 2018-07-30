@@ -1,6 +1,6 @@
-<div class="d-flex flex-column px-5 home-post ">
+<div class="d-flex flex-column px-5 home-post">
     @foreach($articles as $article)
-    <div class="col-12 d-flex flex-column border px-4 pt-4 my-3 home-content__left__post">
+    <div class="col-12 d-flex flex-column px-4 pt-4 my-3 home-content__left__post border-bottom">
         <img class="img-fluid" src="{{$article->img}}" alt="">
         <a href="" class="text-uppercase text-dark pt-2 font-weight-bold">
             {{$article->title}}

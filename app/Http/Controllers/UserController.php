@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\URL;
 class UserController extends Controller
 {
     //
-<<<<<<< HEAD
+
     public function create(){
         return view('front.register');
     }
@@ -66,6 +66,9 @@ class UserController extends Controller
     public function profile(){
 //        $id= Cookie::get('user_cookie')->id;
 //        $user = User::where('id' , '=' , $id)->first();
+
+//        dd(User::find(2)->roles());
+
         return view('front.manage.manage-profile');
     }
     public function edit(){
@@ -82,10 +85,6 @@ class UserController extends Controller
     }
     public function account(){
         return view('front.manage.manage-account');
-=======
-    public function index () {
-        
->>>>>>> origin/thien
     }
     public function accountUpdate(){}
     public function accountDelete(){

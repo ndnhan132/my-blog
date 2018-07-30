@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     //
-<<<<<<< HEAD
     public function home(){
         $articles = Article::with('user')->get();
         return view('front.index',['articles'=>$articles]);
@@ -27,13 +26,4 @@ class ArticleController extends Controller
                                                     'comments'=>$comments,
         ]);
     }
-
-
-
-=======
-    public function home() {
-        $articles = Article::select()->limit(10)->get();
-        return view('front.index', ['articles'=> $articles]);
-    }
->>>>>>> origin/thien
 }

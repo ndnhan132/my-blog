@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\URL;
 
 class UserController extends Controller
 {
@@ -41,7 +42,7 @@ class UserController extends Controller
                 $user_cookie= cookie('user_cookie', $user, 30);
 //            return redirect()->back()->withCookie($user_cookie)->with('login_data', true);
 //            return response()->withCookie($user_cookie)->with('login_data', true);
-//                dd($user_cookie);
+//               dd($user_cookie);
                 return response()->redirectToRoute('home')->withCookie($user_cookie);
             }
         }else{
@@ -50,9 +51,15 @@ class UserController extends Controller
     }
 
     public function logout(){
-        $user_cookie= Cookie::get('user_cookie');
+        $strUrl = str_replace(url('/'), '', url()->previous());
+//        dd(starts_with($strUrl , '/manage'));
+//        $user_cookie= Cookie::get('user_cookie');
         $cookie= Cookie::forget('user_cookie');
-        return redirect()->back()->withCookie($cookie);
+        if(starts_with($strUrl , '/manage')) {
+            return redirect()->route('home')->withCookie($cookie);
+        }else{
+            return redirect()->back()->withCookie($cookie);
+        }
     }
 
     public function profile(){
@@ -76,5 +83,7 @@ class UserController extends Controller
         return view('front.manage.manage-account');
     }
     public function accountUpdate(){}
-    public function accountDelete(){}
+    public function accountDelete(){
+
+    }
 }

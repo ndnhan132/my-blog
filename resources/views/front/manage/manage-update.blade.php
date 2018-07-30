@@ -54,7 +54,10 @@
             </div>
             <div class="form-group d-flex justify-content-center mt-4">
                     <button class="btn manage__btn--green rounded-0 mx-2 text-white" style="width: 80px">Update</button>
-                {{--<button class="btn manage__btn--green rounded-0  mx-2 text-white" style="width: 80px" type="" >Back</button>--}}
+                <a href="{{URL::previous()}}" class="btn manage__btn--green rounded-0  mx-2 text-white" style="width:
+                80px"
+                   type=""
+                >Back</a>
             </div>
         </form>
     </div>

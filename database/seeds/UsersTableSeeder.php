@@ -14,20 +14,21 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker= Faker::create();
         User::create([
             'name'=>'dinh nhan',
             'username'=>'nhan',
             'email'=>'nhan@asd.con',
             'password'=>bcrypt('123'),
-            'birthday'=>'1123-01-10',
-            'gender'=>1,
-            'phone'=>1212121212,
+            'birthday'=>$faker->date($format = 'Y-m-d', $max = 'now'),
+            'gender'=>'1',
+            'phone'=>'1212121212',
             'address'=>'Viet nam',
             'img'=>'http://truyencv.com/images/avatar/ddddaaaa-1504004292.jpg?v=1',
-            'description'=>'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-        ]);
+            'description'=>'Of course, you may not always want to select all columns from a database table.'
+         ]);
 
-        $faker= Faker::create();
+
         foreach (range(1,10) as $index){
             User::create([
                 'name'=>$faker->name,

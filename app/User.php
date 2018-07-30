@@ -51,7 +51,7 @@ class User extends Authenticatable
     public function user(){
         return $this->hasOne('App\Comment');
     }
-    public function roles()
+    public function role()
     {
         return $this->belongsToMany(Role::class);
     }

@@ -20,17 +20,16 @@ Route::get('/register', 'UserController@create')->name('register');
 Route::post('/user/store', 'UserController@store')->name('user-store');
 Route::get('/login', 'UserController@getLogin')->name('get-login');
 Route::post('/login', 'UserController@postLogin')->name('post-login');
+Route::get('/logout', 'UserController@logout')->name('logout');
 
-Route::get('/profile', 'UserController@profile')->name('user-profile');
-Route::get('/edit', 'UserController@edit')->name('user-edit');
-Route::put('/update', 'UserController@update')->name('user-update');
-Route::get('/account', 'UserController@account')->name('user-account');
-Route::put('/account/update', 'UserController@accountUpdate')->name('user-account-update');
-Route::delete('/account/update', 'UserController@accountDelete')->name('user-account-delete');
-
-Route::get('/logout','UserController@logout')->name('logout');
-
-
+Route::prefix('/manage')->group(function () {
+    Route::get('/profile', 'UserController@profile')->name('user-profile');
+    Route::get('/edit', 'UserController@edit')->name('user-edit');
+    Route::put('/update', 'UserController@update')->name('user-update');
+    Route::get('/account', 'UserController@account')->name('user-account');
+    Route::put('/account/update', 'UserController@accountUpdate')->name('user-account-update');
+    Route::delete('/account/delete', 'UserController@accountDelete')->name('user-account-delete');
+});
 
 
 Route::prefix('/manage')->group(function (){

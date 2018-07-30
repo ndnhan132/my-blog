@@ -60,7 +60,11 @@
                                 {{$user_cookie->name}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                {{--if($user_)--}}
                                 <form action="{{route('user-profile')}}" method="get">
+
+
                                     <button class="btn btn-link dropdown-item">Ho so</button>
                                 </form>
                                 <a class="dropdown-item" href="#">Another action</a>

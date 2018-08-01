@@ -4,10 +4,14 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use App\Role;
+use Laravel\Scout\Searchable;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -24,9 +28,9 @@ class User extends Authenticatable
      * @var array
      */
     public function saveUser($request){
-        $this->name= $request->input('register-username');
-        $this->username= $request->input('register-username');
-        $this->password= bcrypt($request->input('register-password'));
+        $this->name= $request->input('username');
+        $this->username= $request->input('username');
+        $this->password= bcrypt($request->input('password'));
         $this->save();
     }
     public function userUpdate($id, $request){
@@ -40,6 +44,13 @@ class User extends Authenticatable
         $user->description= $request->input('description');
         $user->save();
     }
+    public function deleteUser($id){
+        $this::destroy($id);
+    }
+
+//    public function searchUser($request){
+//        dd(User::search($request->input('search'))->get());
+//    }
 
     protected $hidden = [
         'password', 'remember_token',
@@ -51,13 +62,11 @@ class User extends Authenticatable
     public function user(){
         return $this->hasOne('App\Comment');
     }
-
-
     /**
      * The roles that belong to the user.
      */
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany('App\Role');
     }
 }

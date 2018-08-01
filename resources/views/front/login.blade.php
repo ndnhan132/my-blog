@@ -2,16 +2,17 @@
 @section('form-content')
     <div class="">
         <form class="form-horizontal" action="{{route('post-login')}}" method="post">
-            <input type="hidden" name="_method" value="post" />{{csrf_field()}}
+            <input type="hidden" name="_method" value="post" />
+            {{ csrf_field() }}
             <div class="form-group">
                 <label for="exampleInputUsername">UserName</label>
-                <input type="text" class="form-control" id="login-username" name="login-username"
-                       placeholder="Username" value="{{old('login-username')}}">
+                <input type="text" class="form-control" id="login-username" name="username"
+                       placeholder="Username" value="{{old('username')}}">
                 <small id="login-user-alert" class="form-text text-muted"></small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="login-password" name="login-password"
+                <input type="password" class="form-control" id="login-password" name="password"
                        placeholder="Password" value="123">
                 <small id="login-pass-alert" class="form-text text-muted"></small>
             </div>

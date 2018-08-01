@@ -19,12 +19,8 @@
             </ul>
         </div>
         <div class="d-flex">
-            <form class="form-inline admin__header__search px-2">
-                <input class="form-control rounded-0 border-0 py-1" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn rounded-0 border-0 py-1 bg-white" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
+            <form class="form-inline admin__header__search px-2" method="get" action="">
+            @include('admin.layout.search-form')
             <a class="nav-link btn rounded-circle admin__header__notify px-2">
                 <i class="far fa-comments rounded-circle border text-white"></i>
                 <span class="text-white border rounded-circle bg-danger font-weight-bold">

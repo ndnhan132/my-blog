@@ -21,10 +21,10 @@ class UsersTableSeeder extends Seeder
             'email'=>'nhan@asd.con',
             'password'=>bcrypt('123'),
             'birthday'=>$faker->date($format = 'Y-m-d', $max = 'now'),
-            'gender'=>'1',
+            'gender'=>'0',
             'phone'=>'1212121212',
             'address'=>'Viet nam',
-            'img'=>'http://truyencv.com/images/avatar/ddddaaaa-1504004292.jpg?v=1',
+            'img'=>$faker->imageUrl($width = 640, $height = 480),
             'description'=>'Of course, you may not always want to select all columns from a database table.'
          ]);
 

@@ -30,6 +30,26 @@ Route::prefix('/manage')->group(function () {
     Route::put('/account/update', 'UserController@accountUpdate')->name('user-account-update');
     Route::delete('/account/delete', 'UserController@accountDelete')->name('user-account-delete');
 });
+Route::prefix('/admin')->group(function () {
+    Route::get('/','UserController@dashboard')->name('admin');
+    Route::prefix('/user')->group(function () {
+        Route::get('/list', 'UserController@getListUser')->name('list-user');
+        Route::get('/detail/{id}', 'UserController@userDetail')->name('user-detail');
+        Route::delete('/delete/{id}', 'UserController@userDelete')->name('user-delete');
+        Route::post('/add-new', 'UserController@addNewUser')->name('add-new-user');
+        Route::get('seach-user', 'UserController@searchUser')->name('search-user');
+    });
+    Route::prefix('/article')->group(function () {
+
+
+
+    });
+    Route::prefix('/as')->group(function () {
+
+
+
+    });
+});
 
 
 Route::prefix('/manage')->group(function (){
@@ -42,25 +62,4 @@ Route::prefix('/manage')->group(function (){
     Route::get('/article/info', function (){
         return view('front.manage.manage-article-info');
     });
-});
-Route::prefix('/admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin.index');
-    });
-    Route::get('/profile', function (){
-        return view('admin.profile');
-    });
-    Route::get('/user', function (){
-        return view('admin.index');
-    });
-    Route::get('/article', function (){
-        return view('admin.index');
-    });
-    Route::get('/mailbox', function (){
-        return view('admin.mailbox');
-    });
-    Route::get('/table', function (){
-        return view('admin.table');
-    });
-
 });

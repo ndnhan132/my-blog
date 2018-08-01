@@ -5,19 +5,19 @@
         <input type="hidden" name="_method" value="post" />{{csrf_field()}}
         <div class="form-group">
             <label for="exampleInputUsername">UserName</label>
-            <input type="text" class="form-control" id="register-username" name="register-username"
-                   placeholder="Username" value="{{old('register-username')}}">
+            <input type="text" class="form-control" id="register-username" name="rusername"
+                   placeholder="Username" value="{{old('username')}}">
             <small id="error-username" class="form-text text-danger"></small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="register-password" name="register-password"
+            <input type="password" class="form-control" id="register-password" name="password"
                    placeholder="Password" value="123">
             <small id="error-pass" class="form-text text-danger"></small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Confirm Password</label>
-            <input type="password" class="form-control" id="register-repassword" name="register-repassword"
+            <input type="password" class="form-control" id="register-repassword" name="repassword"
                    placeholder="Password">
             <small id="error-repass" class="form-text text-danger"></small>
         </div>

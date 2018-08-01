@@ -43,35 +43,38 @@
 {{--login user--}}
 
 @php
-    $user_cookie = Cookie::get('user_cookie')
+    $user_id_cookie = Cookie::get('user_id_cookie');
+    $user_name_cookie = Cookie::get('user_name_cookie');
+    $user_role_cookie = Cookie::get('user_role_cookie');
 @endphp
 
 
 <div class="d-flex flex-row mt-2 align-items-center">
     <div class="col-6 d-flex justify-content-end text-secondary p-0 text-dark h1">FUN</div>
 
-    @if(isset($user_cookie))
+    @if(isset($user_id_cookie))
         <div class="col-6 d-flex justify-content-end text-secondary align-items-center p-0">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{$user_cookie->name}}
+                                {{$user_name_cookie}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                {{--if($user_)--}}
-                                <form action="{{route('user-profile')}}" method="get">
-
-
-                                    <button class="btn btn-link dropdown-item">Ho so</button>
-                                </form>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <form action="{{route('logout')}}" method="get">
-                                    <button class="btn btn-link dropdown-item">dang xuat</button>
-                                </form>
+                                @if($user_role_cookie === 'admin')
+                                    <form action="{{route('admin')}}" method="get">
+                                        <button class="btn btn-link dropdown-item">Admin</button>
+                                @else
+                                    <form action="{{route('user-profile')}}" method="get">
+                                        <button class="btn btn-link dropdown-item">Nguoi dung</button>
+                                @endif
+                                    </form>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <form action="{{route('logout')}}" method="get">
+                                        <button class="btn btn-link dropdown-item">dang xuat</button>
+                                    </form>
                             </div>
                         </li>
                     </ul>
@@ -80,15 +83,11 @@
         </div>
     @else
         <div class="col-6 d-flex justify-content-end text-secondary align-items-center p-0">
-            {{--<button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal"--}}
-                    {{--data-target="#login-submit">dang nhap</button>--}}
-            {{--<button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"--}}
-                    {{--data-target="#register-submit">dang ky</button>--}}
             <form action="{{route('get-login')}}">
-                <button class="btn btn-sm btn-info">login</button>
+                <button class="btn btn-sm btn-secondary rounded-0 border-right">login</button>
             </form>
             <form action="{{route('register')}}">
-                <button class="btn btn-sm btn-secondary">register</button>
+                <button class="btn btn-sm btn-secondary rounded-0">register</button>
             </form>
         </div>
     @endif

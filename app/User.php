@@ -7,11 +7,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use App\Role;
 use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use Searchable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +24,11 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -45,12 +52,21 @@ class User extends Authenticatable
         $user->save();
     }
     public function deleteUser($id){
-        $this::destroy($id);
+        $user= User::find($id);
+        $articles = Article::where('user_id', '=', $id)->get();
+        foreach($articles as $art){
+            $art->delete();
+        }
+        $comments = Comment::where('user_id', '=', $id)->get();
+        foreach($comments as $com){
+            $com->delete();
+        }
+        $user->delete();
     }
 
-//    public function searchUser($request){
-//        dd(User::search($request->input('search'))->get());
-//    }
+   public function searchUser($request){
+       return User::search($request->input('search'))->get();
+   }
 
     protected $hidden = [
         'password', 'remember_token',
@@ -68,5 +84,15 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany('App\Role');
+    }
+
+    public function searchableAs()
+    {
+        return 'users_index';
+    }
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+        return $array;
     }
 }

@@ -18,13 +18,23 @@ class CommentsTableSeeder extends Seeder
         //
         $users= User::all();
         $articles= Article::all();
+        $comments = [
+            ['comment' => 'good'],
+            ['comment' => 'very good'],
+            ['comment' => 'great'],
+            ['comment' => 'the article very useful'],
+            ['comment' => 'Very nice'],
+        ];
+
         $faker= Faker::create();
         foreach (range(1,100) as $index){
-            Comment::create ([
-                'user_id'=> $faker->randomElement($users->pluck('id')->toArray()),
-                'article_id'=> $faker->randomElement($articles->pluck('id')->toArray()),
-                'comment'=>$faker->paragraph($nbSentences = 2, $variableNbSentences = true),
-            ]);
+            foreach ($comments as $comment) {
+                Comment::create ([
+                    'user_id'=> $faker->randomElement($users->pluck('id')->toArray()),
+                    'article_id'=> $faker->randomElement($articles->pluck('id')->toArray()),
+                    'comment'=>$faker->randomElement($comment),
+                ]);
+            }
         }
     }
 }

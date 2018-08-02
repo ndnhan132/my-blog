@@ -1,5 +1,5 @@
 {{--register--}}
-@if(session()->has('register_data'))
+{{-- @if(session()->has('register_data'))
     @if(session()->get('register_data'))
         <div class="d-flex w-25 mx-auto bg-success justify-content-center fixed-top">
         <span class="text-white">
@@ -20,8 +20,7 @@
 @endif
 
 {{--login--}}
-@if(session()->has('login_data'))
-@if(session()->get('login_data'))
+{{-- @if(session()->get('login_data'))
     <div class="d-flex w-25 mx-auto bg-success justify-content-center fixed-top">
         <span class="text-white">
         dang nhap tc
@@ -33,12 +32,12 @@
         dang nhap that bai
         </span>
     </div>
+    @else
+    <div></div>
+    @endif
 @else
     <div></div>
-@endif
-@else
-    <div></div>
-@endif
+@endif --}}
 
 {{--login user--}}
 

@@ -4,16 +4,21 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
     //
+    use SoftDeletes;
+    use Searchable;
 
     protected $dates = [
         'created_at',
         'updated_at',
         'deleted_at'
     ];
+    // protected $dates = ['deleted_at'];
 
 
     public function user(){
@@ -32,6 +37,16 @@ class Article extends Model
 //    public function getViewAttribute($value){
 //        return $value * 100;
 //    }
+
+public function searchableAs()
+    {
+        return 'articles_index';
+    }
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+        return $array;
+    }
 
 
 }

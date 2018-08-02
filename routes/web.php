@@ -37,29 +37,18 @@ Route::prefix('/admin')->group(function () {
         Route::get('/detail/{id}', 'UserController@userDetail')->name('user-detail');
         Route::delete('/delete/{id}', 'UserController@userDelete')->name('user-delete');
         Route::post('/add-new', 'UserController@addNewUser')->name('add-new-user');
-        Route::get('seach-user', 'UserController@searchUser')->name('search-user');
+        Route::get('/seach-user', 'UserController@searchUser')->name('search-user');
     });
     Route::prefix('/article')->group(function () {
-
-
-
+        Route::get('/list', 'ArticleController@getListArticle')->name('list-article');
+        // Route::get('/detail/{id}', 'ArticleController@userDetail')->name('user-detail');
+        Route::delete('/delete/{id}', 'ArticleController@articelDelete')->name('article-delete');
+        Route::post('/add-new', 'ArticleController@addNewArticle')->name('add-new-article');
+        Route::get('/seach-article', 'ArticleController@searchArticle')->name('search-article');
     });
     Route::prefix('/as')->group(function () {
 
 
 
-    });
-});
-
-
-Route::prefix('/manage')->group(function (){
-    Route::get('/article/new', function (){
-        return view('front.manage.manage-article-new');
-    });
-    Route::get('/article/manage', function (){
-        return view('front.manage.manage-article-manage');
-    });
-    Route::get('/article/info', function (){
-        return view('front.manage.manage-article-info');
     });
 });

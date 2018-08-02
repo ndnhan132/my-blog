@@ -43,10 +43,12 @@ class UserController extends Controller
             }else{
                 $user_id_cookie= cookie('user_id_cookie', $user->id, 30);
                 $user_name_cookie= cookie('user_name_cookie', $user->name, 30);
+                $user_img_cookie= cookie('user_img_cookie', $user->img, 30);
                 $user_role_cookie= cookie('user_role_cookie', $user->roles->first()->name, 30);
                 return redirect('home')
                         ->withCookie($user_id_cookie)
                         ->withCookie($user_name_cookie)
+                        ->withCookie($user_img_cookie)
                         ->withCookie($user_role_cookie);
             }
         }else{
@@ -59,16 +61,19 @@ class UserController extends Controller
 //        $user_cookie= Cookie::get('user_cookie');
         $user_id_cookie= Cookie::forget('user_id_cookie');
         $user_name_cookie= Cookie::forget('user_name_cookie');
+        $user_img_cookie= Cookie::forget('user_img_cookie');
         $user_role_cookie= Cookie::forget('user_role_cookie');
         if(starts_with($strUrl , '/manage')) {
             return redirect('home')
                 ->withCookie($user_name_cookie)
                 ->withCookie($user_id_cookie)
+                ->withCookie($user_img_cookie)
                 ->withCookie($user_role_cookie);
         }else{
             return redirect()->back()
                 ->withCookie($user_name_cookie)
                 ->withCookie($user_id_cookie)
+                ->withCookie($user_img_cookie)
                 ->withCookie($user_role_cookie);
         }
     }
@@ -127,8 +132,7 @@ class UserController extends Controller
         }
     }
     public function searchUser(Request $request){
-        $users= new User();
-        $users->searchUser($request);
-        dd($users);
+        $users =User::search($request->input('search'))->get();
+        return view('admin.list-user', ['users'=>$users]);
     }
 }

@@ -1,11 +1,11 @@
-@extends('admin.layout.master')
+{{-- @extends('admin.layout.master')
 @section('admin-content')
     <div class="">
         <div>
             <ul class="list-group p-5">
                 <li class="d-flex list-group-item list-group-item-success rounded-0 py-0 align-items-center">
                     <span class="text-center text-dark text-uppercase">
-                        Danh sach thanh vien
+                        ket qua toim kiem
                     </span>
                     <div class="d-flex ml-auto">
                         <form class="form-inline admin__header__search px-2" method="get" action="{{route('search-user')
@@ -70,8 +70,8 @@
                                 {{--</button>--}}
                             {{--</form>--}}
                             <form action="{{route('user-delete', $user->id)}}" method="post" class="px-2">
-                                <input type="hidden" name="_method" value="delete"/> {{csrf_field()}}
-                                <button class="btn btn-danger rounded-0 btn-sm" {{($user->roles->first()['name'])==='admin'? 'disabled' : ''}}>
+                                <input type="hidden" name="_method" value="delete" /> {{csrf_field()}}
+                                <button class="btn btn-danger rounded-0 btn-sm">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>
@@ -82,7 +82,4 @@
         </div>
     </div>
 @endsection
-
-
-
-<!-- Modal -->
+ --}}

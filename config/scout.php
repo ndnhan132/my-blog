@@ -2,7 +2,7 @@
 
 return [
 
-    'queue' => true,
+    // 'queue' => true,
     /*
     |--------------------------------------------------------------------------
     | Default Search Engine
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'queue' => env('SCOUT_QUEUE', false),
+    'queue' => env('SCOUT_QUEUE', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -85,8 +85,8 @@ return [
     */
 
     'algolia' => [
-        'id' => env('ALGOLIA_APP_ID', ''),
-        'secret' => env('ALGOLIA_SECRET', ''),
+        'id' => env('ALGOLIA_APP_ID', '39BFLNPE69'),
+        'secret' => env('ALGOLIA_SECRET', '254fe0fad89786dfd5515603077c9669'),
     ],
 
 ];

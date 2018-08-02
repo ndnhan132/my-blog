@@ -24,6 +24,7 @@ class CreateArticlesTable extends Migration
             $table->integer('report');
             $table->integer('dislike');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

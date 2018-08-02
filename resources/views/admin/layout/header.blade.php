@@ -19,17 +19,21 @@
             </ul>
         </div>
         <div class="d-flex">
-            <form class="form-inline admin__header__search px-2" method="get" action="">
-            @include('admin.layout.search-form')
-            <a class="nav-link btn rounded-circle admin__header__notify px-2">
-                <i class="far fa-comments rounded-circle border text-white"></i>
-                <span class="text-white border rounded-circle bg-danger font-weight-bold">
-                    12
+            {{--<form class="form-inline admin__header__search px-2" method="get" action="">--}}
+              {{--@include('admin.layout.search-form')--}}
+                {{--<a class="nav-link btn rounded-circle admin__header__notify px-2">--}}
+                    {{--<i class="far fa-comments rounded-circle border text-white"></i>--}}
+                    {{--<span class="text-white border rounded-circle bg-danger font-weight-bold">--}}
+                        {{--12--}}
+                    {{--</span>--}}
+                {{--</a>--}}
+                <a class="nav-link btn rounded-circle pl-2">
+                    <img width="35" height="35" src="{{$user_img_cookie}}" class="img-fluid rounded-circle border"
+                         alt="">
+                </a>
+                <span class="nav-link btn rounded-circle pl-2 pr-5 text-white text-capitalize">
+                    {{$user_name_cookie}}
                 </span>
-            </a>
-            <a class="nav-link btn rounded-circle pl-2 pr-5">
-                <img width="35" height="35" src="{{asset('img/avatar.jpg')}}" class="img-fluid rounded-circle border" alt="">
-            </a>
         </div>
     </nav>
 </div>

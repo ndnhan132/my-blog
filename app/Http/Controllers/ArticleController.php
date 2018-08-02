@@ -33,7 +33,11 @@ class ArticleController extends Controller
         $articles= Article::with('user')->get();
         return view('admin.list-article', ['articles'=>$articles]);
     }
-    public function articleDelete($id){}
+    public function articleDelete($id){
+        $article= new Article();
+        $article->deleteArticle($id);
+        return redirect()->back();
+    }
     public function addNewArticle(){}
     public function searchArticle(Request $request){
         $articles = Article::search($request->input('search'))->get();

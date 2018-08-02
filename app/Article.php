@@ -20,6 +20,19 @@ class Article extends Model
     ];
     // protected $dates = ['deleted_at'];
 
+    public function deleteArticle($id){
+        $article= Article::find($id);
+        $article->delete();
+        $comments = Comment::where('article_id', '=', $id)->get();
+        foreach($comments as $com){
+            $com->delete();
+        }
+    }
+
+
+
+
+
 
     public function user(){
         return $this->belongsTo('App\User');

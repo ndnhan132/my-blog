@@ -24,7 +24,6 @@ class UserController extends Controller
         if($data){
             $newUser->saveUser($request);
             return redirect()->route('get-login')->with('register_data',$data );
-//            return redirect()->back()->with('register_data',$data );
         }else {
             return redirect()->back()->withInput()->with('register_data',$data );
         }
@@ -89,11 +88,11 @@ class UserController extends Controller
         return view('front.manage.manage-update', ['user'=>$user]   );
     }
     public function update(Request $request){
-        $id= $request->cookie('user_cookie');
-        $user = new User();
-        $user->userUpdate($id, $request);
-        $user_cookie= cookie('user_cookie', User::find($id), 30);
-        return redirect()->route('user-profile')->withCookie($user_cookie);
+//        $id= $request->cookie('user_cookie');
+//        $user = new User();
+//        $user->userUpdate($id, $request);
+//        $user_cookie= cookie('user_cookie', User::find($id), 30);
+//        return redirect()->route('user-profile')->withCookie($user_cookie);
     }
     public function account(){
         return view('front.manage.manage-account');
@@ -117,7 +116,7 @@ class UserController extends Controller
     }
     public function userDelete($id){
         $user = new User();
-        $user->deleteUser($id);
+        $user->adminDeleteUser($id);
         return redirect()->route('list-user');
     }
     public function addNewUser(Request $request){
@@ -134,5 +133,10 @@ class UserController extends Controller
     public function searchUser(Request $request){
         $users =User::search($request->input('search'))->get();
         return view('admin.list-user', ['users'=>$users]);
+    }
+    public function adminUpdateUser(Request $request, $id){
+        $user= new User();
+        $user->adminUpdateUser($id, $request);
+        return redirect()->back();
     }
 }

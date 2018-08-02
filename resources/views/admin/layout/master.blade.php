@@ -13,6 +13,7 @@
     @php
         $user_id_cookie = Cookie::get('user_id_cookie');
         $user_name_cookie = Cookie::get('user_name_cookie');
+        $user_img_cookie = Cookie::get('user_img_cookie');
     @endphp
 
     @if(isset($user_id_cookie))

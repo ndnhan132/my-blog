@@ -47,6 +47,8 @@ Route::prefix('/admin')->group(function () {
         Route::get('/add-new', 'ArticleController@getAddNewArticle')->name('get-add-new-article');
         Route::post('/add-new', 'ArticleController@postAddNewArticle')->name('post-add-new-article');
         Route::get('/seach-article', 'ArticleController@searchArticle')->name('search-article');
+        Route::get('/edit/{id}', 'ArticleController@getEdit')->name('get-edit-article');
+        Route::put('/update', 'ArticleController@updateArticle')->name('update-article');
     });
     Route::prefix('/as')->group(function () {
     });

@@ -18,8 +18,6 @@ class Article extends Model
         'updated_at',
         'deleted_at'
     ];
-    // protected $dates = ['deleted_at'];
-
     public function deleteArticle($id){
         $article= Article::find($id);
         $article->delete();
@@ -28,12 +26,11 @@ class Article extends Model
             $com->delete();
         }
     }
-    public function saveArticle($request, $id){
+    public function saveArticle($request, $id, $imgName){
         $this->title= $request->input('title');
         $this->content= $request->input('txtContent');
         $this->user_id= $id;
-        $this->img = '';
-//        $this->img = $request->input('img');
+        $this->img = asset('img-upload/' . $imgName);
         $this->save();
     }
 

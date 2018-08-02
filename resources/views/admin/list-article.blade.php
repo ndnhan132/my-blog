@@ -38,19 +38,19 @@
                         </span>
 
                         <div class=" d-flex ml-auto align-content-center">
-                            <form action="{{route('article-detail',$article->id)}}" method="get" class="px-2">
-                                <button class="btn btn-primary rounded-0 btn-sm">
+                            <form action="{{route('article-detail',$article->id)}}" method="get" class="    ">
+                                <button class="btn btn-link rounded-0 btn-sm">
                                     <i class="fas fa-angle-double-right"></i>
                                 </button>
                             </form>
-                            {{--<form action=""method="" class="px-2">--}}
-                                {{--<button class="btn btn-info rounded-0 btn-sm">--}}
-                                    {{--<i class="far fa-edit"></i>--}}
-                                {{--</button>--}}
-                            {{--</form>--}}
-                            <form action="{{route('article-delete', $article->id)}}" method="post" class="px-2">
+                            <form action="{{route('get-edit-article', $article->id)}}" method="get" class="" >
+                                <button class="btn btn-link rounded-0 btn-sm" {{ ($article->user->id !==  Cookie::get('user_id_cookie')) ? 'disabled' : '' }}>
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </form>
+                            <form action="{{route('article-delete', $article->id)}}" method="post" class="">
                                 <input type="hidden" name="_method" value="delete"/> {{csrf_field()}}
-                                <button class="btn btn-danger rounded-0 btn-sm"}}>
+                                <button class="btn btn-link rounded-0 btn-sm"}}>
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </form>

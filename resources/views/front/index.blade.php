@@ -2,10 +2,9 @@
 @section('articles-content')
     <div class="d-flex flex-column px-5 home-post ">
         @foreach(collect($articles)->sortBy('create_at')->reverse()->splice(0, 5) as $article)
-            <div class="col-12 d-flex flex-column border px-4 pt-4 my-3 home-content__left__post">
-                <img class="img-fluid" src="{{$article->img}}" alt="">
+            <div class="col-12 border px-4 pt-4 my-3 home-content__left__post">
+                <img class="w-100" src="{{$article->img}}" alt="">
                 <form action="{{route('article-detail',$article->id)}}" method="get">
-                    {{--<input type="hidden" name="_method" value="post" /> {{csrf_field()}}--}}
                     <button class="btn btn-link">
                 <span class=" text-uppercase text-dark pt-2 font-weight-bold text-truncate">
                     {{$article->title}}

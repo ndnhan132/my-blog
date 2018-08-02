@@ -27,6 +27,7 @@
                 </div>
                 <div class="col-10 p-0 admin admin__content ">
                     @section('admin-content')
+                    
                     @show
                 </div>
             </div>

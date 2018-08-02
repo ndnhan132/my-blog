@@ -12,6 +12,9 @@
 */
 use Illuminate\Cookie;
 
+Route::get('/about', 'ArticleController@about')->name('about');
+Route::get('/contact', 'ArticleController@contact')->name('contact');
+
 Route::get('/', 'ArticleController@home')->name('home');
 Route::get('/home', 'ArticleController@home')->name('home');
 Route::get('/{id}/detail', 'ArticleController@detail')->name('article-detail');

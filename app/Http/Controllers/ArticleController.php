@@ -12,10 +12,17 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     //
-<<<<<<< HEAD
     public function home(){
         $articles = Article::with('user')->get();
         return view('front.index',['articles'=>$articles]);
+    }
+    public function about(){
+        $articles = Article::with('user')->get();
+        return view('front.about',['articles'=>$articles]);
+    }
+    public function contact(){
+        $articles = Article::with('user')->get();
+        return view('front.contact',['articles'=>$articles]);
     }
     public function detail($id){
         $articles = Article::with('user')->get();
@@ -30,10 +37,4 @@ class ArticleController extends Controller
 
 
 
-=======
-    public function home() {
-        $articles = Article::select()->limit(10)->get();
-        return view('front.index', ['articles'=> $articles]);
-    }
->>>>>>> origin/thien
 }

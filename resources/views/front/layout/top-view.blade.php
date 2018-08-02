@@ -30,5 +30,5 @@
             </i>
         </div>
     </li>
-    @endfor
+    @endforeach
 </ul>

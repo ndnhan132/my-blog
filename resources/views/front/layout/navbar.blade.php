@@ -9,15 +9,20 @@
             <li class="nav-item">
                 <form action="{{route('home')}}" method="get">
                     <button class="nav-link btn btn-link">Home
-                        <span class="sr-only">(current)</span>
                     </button>
                 </form>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="#">About</a>
+                <form action="{{route('about')}}" method="get">
+                    <button class="nav-link btn btn-link">About
+                    </button>
+                </form>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="#">Contact</a>
+                <form action="{{route('contact')}}" method="get">
+                    <button class="nav-link btn btn-link">Contact
+                    </button>
+                </form>
             </li>
         </ul>
         {{-- <form class="form-inline my-2 my-lg-0">

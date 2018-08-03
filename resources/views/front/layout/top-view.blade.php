@@ -8,7 +8,9 @@
     <?php
         $count= 0;
     ?>
-    @foreach(collect($articles)->sortBy('view')->reverse()->splice(0,10) as $article)
+    {{--@foreach($articles as $article)--}}
+{{--    @foreach(collect($articles)->sortBy('view')->reverse()->splice(0,10) as $article)--}}
+    @foreach(collect($allArticles)->sortBy('view')->reverse()->splice(0,10) as $article)
 
     <li class="d-flex border-bottom border-light rounded mt-0">
         <div class="col-2  d-flex p-0 justify-content-center align-items-center">

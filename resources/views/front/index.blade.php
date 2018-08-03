@@ -1,7 +1,8 @@
 @extends('front.layout.content')
 @section('articles-content')
     <div class="d-flex flex-column px-5 home-post ">
-        @foreach(collect($articles)->sortBy('create_at')->reverse()->splice(0, 5) as $article)
+{{--        @foreach(collect($articles)->sortBy('create_at')->reverse()->splice(0, 5) as $article)--}}
+        @foreach($articles as $article)
             <div class="col-12 border px-4 pt-4 my-3 home-content__left__post">
                 <img class="w-100" src="{{$article->img}}" alt="">
                 <form action="{{route('article-detail',$article->id)}}" method="get">
@@ -29,5 +30,9 @@
                 </div>
             </div>
         @endforeach
+        <div class="d-flex justify-content-center my-4">
+            {{$articles->links('vendor.pagination.default')}}
+        </div>
     </div>
+
 @endsection

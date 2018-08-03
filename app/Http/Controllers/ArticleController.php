@@ -16,8 +16,12 @@ class ArticleController extends Controller
 
     
     public function home(){
-        $articles = Article::with('user')->get();
-        return view('front.index',['articles'=>$articles]);
+        $articles = Article::with('user')->orderBy('created_at', 'desc')->paginate('10');
+        $allArticles = Article::with('user')->get();
+        return view('front.index',[
+            'articles'=>$articles,
+            'allArticles'=> $allArticles,
+        ]);
     }
     public function detail($id){
         $articles = Article::with('user')->get();
@@ -64,6 +68,23 @@ class ArticleController extends Controller
         $article= Article::find($id);
         return view('admin.update-article', ['article'=>$article]);
     }
-    public function updateArticle(){}
+    public function updateArticle(Request $request, $art_id){
+        $this->validate($request, [
+            'input_img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+//        $user_id= $request->cookie('user_id_cookie');
+        $article= new Article();
+        if ($request->hasFile('input_img')) {
+            $image = $request->file('input_img');
+            $imgName = time().'.'.$image->getClientOriginalExtension();
+            $path = public_path('img-upload');
+            $image->move($path, $imgName);
+            $article->updateArticle($request, $art_id, $imgName);
+            return redirect()->route('list-article')->with('success','Image Upload successfully');
+        }else{
+            $article->updateArticle($request, $art_id, '');
+            return redirect()->route('list-article')->with('success','Image Upload successfully');
+        }
+    }
         
 }

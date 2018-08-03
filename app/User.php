@@ -41,9 +41,12 @@ class User extends Authenticatable
         $this->save();
         $this->roles()->attach(Role::where('name', '=' , 'user')->first()->id);
     }
-    public function userUpdate($id, $request){
+    public function userUpdate($request, $id, $imgName){
         $user= User::find($id);
-        $user->name= $request->input('name');
+
+        if(($request->input('name'))){
+            $user->name= $request->input('name');
+        }
         $user->email= $request->input('email');
         $user->birthday= $request->input('birthday');
         if($request->input('gender')==='male'){
@@ -51,11 +54,14 @@ class User extends Authenticatable
         }elseif($request->input('gender')==='female'){
             $user->gender= '1';
         }else{
-            $user->gender= '3';
+            $user->gender= '2';
         }
         $user->phone= $request->input('phone');
         $user->address= $request->input('address');
         $user->description= $request->input('description');
+        if($imgName !==''){
+            $user->img = asset('img-upload/' . $imgName);
+        }
         $user->save();
     }
     public function adminDeleteUser($id){

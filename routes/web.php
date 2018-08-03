@@ -29,8 +29,8 @@ Route::prefix('/manage')->group(function () {
     Route::get('/edit', 'UserController@edit')->name('user-edit');
     Route::put('/update', 'UserController@update')->name('user-update');
     Route::get('/account', 'UserController@account')->name('user-account');
-    Route::put('/account/update', 'UserController@accountUpdate')->name('user-account-update');
-    Route::delete('/account/delete', 'UserController@accountDelete')->name('user-account-delete');
+    Route::put('/account/update/{id}', 'UserController@accountUpdate')->name('user-password-update');
+    Route::delete('/account/delete/{id}', 'UserController@accountDelete')->name('user-account-delete');
 });
 Route::prefix('/admin')->group(function () {
     Route::get('/','UserController@dashboard')->name('admin');
@@ -50,7 +50,7 @@ Route::prefix('/admin')->group(function () {
         Route::post('/add-new', 'ArticleController@postAddNewArticle')->name('post-add-new-article');
         Route::get('/seach-article', 'ArticleController@searchArticle')->name('search-article');
         Route::get('/edit/{id}', 'ArticleController@getEdit')->name('get-edit-article');
-        Route::put('/update', 'ArticleController@updateArticle')->name('update-article');
+        Route::put('/update/{id}', 'ArticleController@updateArticle')->name('update-article');
     });
     Route::prefix('/as')->group(function () {
     });

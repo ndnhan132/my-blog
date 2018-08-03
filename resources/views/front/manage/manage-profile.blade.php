@@ -30,6 +30,7 @@
                         <span class="col-8 text-dark font-weight-bold">
                             {{ ($user->gender === '0') ? "Nam": ""}}
                             {{ ($user->gender === '1') ? "Nu": ""}}
+                            {{ ($user->gender !== '0' && $user->gender !== '1') ? "Other": ""}}
                         </span>
                     </li>
                     <li class="border-bottom d-flex">

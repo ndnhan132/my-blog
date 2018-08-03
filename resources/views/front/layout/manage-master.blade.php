@@ -33,18 +33,21 @@
                             Bai viet
                         </span>
                     </li>
-                    <a href="http://localhost:6789/manage/article/info">
-                        <li class="list-group-item rounded-0">Chung</li>
-                    </a>
-                    <a href=" http://localhost:6789/manage/article/new">
-                        <li class="list-group-item rounded-0">Dang bai</li>
-                    </a>
-                    <a href="http://localhost:6789/manage/article/manage">
-                        <li class="list-group-item rounded-0">Quan ly</li>
-                    </a>
-                    <a href="">
-                        <li class="list-group-item rounded-0">Khac</li>
-                    </a>
+                    <form method="get" action="{{route('user-profile')}}">
+                        <li class="list-group-item rounded-0">
+                            <button class="btn btn-link p-0">danh sach</button>
+                        </li>
+                    </form>
+                    {{--<form method="get" action="{{route('user-profile')}}">--}}
+                        {{--<li class="list-group-item rounded-0">--}}
+                            {{--<button class="btn btn-link p-0">Ho so</button>--}}
+                        {{--</li>--}}
+                    {{--</form>--}}
+                    {{--<form method="get" action="{{route('user-profile')}}">--}}
+                        {{--<li class="list-group-item rounded-0">--}}
+                            {{--<button class="btn btn-link p-0">Ho so</button>--}}
+                        {{--</li>--}}
+                    {{--</form>--}}
                 </ul>
             @endif
         </div>

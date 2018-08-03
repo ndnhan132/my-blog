@@ -38,7 +38,7 @@
 </div>
 <div class="border mt-4">
     <div class="col-12 d-flex flex-column">
-        <span class="border-bottom "> binh luan</span>
+        <span class="border-bottom ">{{count($comments)}} binh luan</span>
             <form class="col-12 d-flex align-items-center mt-2 px-0" action="{{route('post-comment', $article->id)}}" method="post">
                     <input type="hidden" name="_method" value="post" />
                     {{ csrf_field() }}

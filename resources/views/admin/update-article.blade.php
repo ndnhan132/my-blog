@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
 @section('admin-content')
-    <form class="col-12 px-5 pt-3" action="{{route('update-article')}}" method="post" enctype="multipart/form-data">
+    <form class="col-12 px-5 pt-3" action="{{route('update-article', $article->id)}}" method="post"
+          enctype="multipart/form-data">
         <input type="hidden" name="_method" value="put"/> {{csrf_field()}}
         <div class="form-group">
             <label for="">Title</label>

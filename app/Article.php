@@ -33,6 +33,16 @@ class Article extends Model
         $this->img = asset('img-upload/' . $imgName);
         $this->save();
     }
+    public function updateArticle($request, $art_id, $imgName){
+        $article=Article::find($art_id);
+        $article->title= $request->input('title');
+        $article->content= $request->input('txtContent');
+//        dd($article);
+        if($imgName !==''){
+            $article->img = asset('img-upload/' . $imgName);
+        }
+        $article->save();
+    }
 
 
 

@@ -6,7 +6,8 @@
 </div>
 <div id="carouselExampleSlidesOnly" class="carousel slide my-3" data-ride="carousel">
     <div class="carousel-inner">
-        @foreach(collect($articles)->sortBy('create_at')->reverse()->splice(0, 5) as $key => $article)
+{{--        @foreach($articles as $key => $article)--}}
+        @foreach(collect($allArticles)->sortBy('create_at')->reverse()->splice(0, 5) as $key => $article)
         <div class="carousel-item newpost__item {{$key === 0 ? 'active' : ''}}">
             <img class="d-block w-100" src="{{$article->img}}" alt="First slide">
             <div class="carousel-caption d-none d-md-block fixed-bottom home-content__right__newpost--transparent py-2 px-3">

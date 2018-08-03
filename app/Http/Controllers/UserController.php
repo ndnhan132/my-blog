@@ -36,7 +36,6 @@ class UserController extends Controller
         $password= $request->input('password');
         $user= User::with('roles')->where('username','=' ,$username)->first();
         if(isset($user)){
-//            dd(!Hash::check($password, $user->password));
             if(!Hash::check($password, $user->password)){
                 return redirect()->back()->withInput()->with('login_data', false);
             }else{
@@ -56,8 +55,6 @@ class UserController extends Controller
     }
     public function logout(){
         $strUrl = str_replace(url('/'), '', url()->previous());
-//        dd(starts_with($strUrl , '/manage'));
-//        $user_cookie= Cookie::get('user_cookie');
         $user_id_cookie= Cookie::forget('user_id_cookie');
         $user_name_cookie= Cookie::forget('user_name_cookie');
         $user_img_cookie= Cookie::forget('user_img_cookie');
@@ -88,18 +85,50 @@ class UserController extends Controller
         return view('front.manage.manage-update', ['user'=>$user]   );
     }
     public function update(Request $request){
-//        $id= $request->cookie('user_cookie');
-//        $user = new User();
-//        $user->userUpdate($id, $request);
-//        $user_cookie= cookie('user_cookie', User::find($id), 30);
-//        return redirect()->route('user-profile')->withCookie($user_cookie);
+        $id= Cookie::get('user_id_cookie');
+        $user = new User();
+        if ($request->hasFile('input_img')) {
+            $image = $request->file('input_img');
+            $imgName = time().'.'.$image->getClientOriginalExtension();
+            $path = public_path('img-upload');
+            $image->move($path, $imgName);
+            $user->userUpdate($request, $id, $imgName);
+            return redirect()->route('user-profile')->with('success','Image Upload successfully');
+        }else{
+            $user->userUpdate($request, $id, '');
+            return redirect()->route('user-profile')->with('success','Image Upload successfully');
+        }
+        return redirect()->route('user-profile')->withCookie($user_cookie);
     }
     public function account(){
         return view('front.manage.manage-account');
     }
-    public function accountUpdate(){}
-    public function accountDelete(){
+    public function accountUpdate(Request $request, $id){
+        $id= Cookie::get('user_id_cookie');
+        $user = User::find($id);
+        $oldPas =bcrypt($request->input('old-password'));
 
+        if(!Hash::check($oldPas , $user->password)) {
+            if ($request->input('new-password') === $request->input('renew-password')) {
+                $user->password = bcrypt($request->input('new-password'));
+                $user->save();
+                return view('front.manage.manage-account')->with('data', 'thay doi thanh cong');
+            }
+        }
+        return view('front.manage.manage-account')->with('data', 'thay doi that bai');
+    }
+    public function accountDelete($id){
+        $user = new User();
+        $user->adminDeleteUser($id);
+        $user_id_cookie= Cookie::forget('user_id_cookie');
+        $user_name_cookie= Cookie::forget('user_name_cookie');
+        $user_img_cookie= Cookie::forget('user_img_cookie');
+        $user_role_cookie= Cookie::forget('user_role_cookie');
+        return redirect()->route('home')
+            ->withCookie($user_name_cookie)
+            ->withCookie($user_id_cookie)
+            ->withCookie($user_img_cookie)
+            ->withCookie($user_role_cookie);
     }
 
 //    admin

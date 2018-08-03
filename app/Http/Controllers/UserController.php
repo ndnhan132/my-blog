@@ -130,7 +130,7 @@ class UserController extends Controller
             return redirect()->route('list-user')->with('add_user_data',$data );
         }
     }
-    public function searchUser(Request $request){
+    public function searchUser(Request $request, $art_id){
         $users =User::search($request->input('search'))->get();
         return view('admin.list-user', ['users'=>$users]);
     }

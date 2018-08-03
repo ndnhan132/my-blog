@@ -22,7 +22,7 @@ class ArticleController extends Controller
     public function detail($id){
         $articles = Article::with('user')->get();
         $article = Article::with('user')->find($id);
-        $comments= Comment::with('user')->where('article_id', $id)->get();
+        $comments= Comment::with('user')->where('article_id', $id)->orderBy('created_at', 'desc')->get();
         return view('front.article-detail',[
                                                     'article'=>$article,
                                                     'articles'=>$articles,

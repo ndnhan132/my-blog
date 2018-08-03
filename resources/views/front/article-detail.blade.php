@@ -39,14 +39,14 @@
 <div class="border mt-4">
     <div class="col-12 d-flex flex-column">
         <span class="border-bottom "> binh luan</span>
-        <div class="d-flex align-items-center mt-2">
-            <textarea class="col-11" name="" id="" cols="30" rows="2"></textarea>
-            <form class="col-1" action="">
-                <button class="btn btn-success ">
-                    <i class="fas fa-check text-black-50"></i>
+            <form class="col-12 d-flex align-items-center mt-2 px-0" action="{{route('post-comment', $article->id)}}" method="post">
+                    <input type="hidden" name="_method" value="post" />
+                    {{ csrf_field() }}
+                <textarea class="col-11" name="comment" id="" cols="30" rows="2"></textarea>
+                <button class="btn btn-link">
+                    <i class="fas fa-check text-success" style="font-size: 40px"></i>
                 </button>
             </form>
-        </div>
         @foreach($comments as $comment)
 
             <div class="d-flex align-items-start mt-4">

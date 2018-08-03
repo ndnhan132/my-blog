@@ -22,6 +22,8 @@ Route::get('/login', 'UserController@getLogin')->name('get-login');
 Route::post('/login', 'UserController@postLogin')->name('post-login');
 Route::get('/logout', 'UserController@logout')->name('logout');
 
+Route::post('/comment/{art_id}', 'CommentController@postComment')->name('post-comment');
+
 Route::prefix('/manage')->group(function () {
     Route::get('/profile', 'UserController@profile')->name('user-profile');
     Route::get('/edit', 'UserController@edit')->name('user-edit');

@@ -7,7 +7,10 @@
             <input type="text" class="form-control rounded-0" id="" name="title">
         </div>
         <div class="form-group">
-            <label for="">Img description</label>
+            {{--<label for="">Img description</label>--}}
+            {{--<input type="text" class="form-control rounded-0" id="" name="img">--}}
+
+
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
@@ -18,10 +21,9 @@
                 </div>
             @endif
 
-            <input name="input_img" type="file" id="" onchange="readURL(this);">
-            <img class="col-sm-6 preview" id="preview"  src=" " alt="img"></img>
+            <input data-preview="#preview" name="input_img" type="file" id="imageInput">
+            <img class="col-sm-6" id="preview"  src="" ></img>
             {{--  <p class="help-block">Example block-level help text here.</p>  --}}
-
         </div>
         <div class="form-group">
             <label for="">Content</label>

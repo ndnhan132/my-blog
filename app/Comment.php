@@ -15,6 +15,13 @@ class Comment extends Model
         'deleted_at'
     ];
 
+    public function saveComment($request, $user_id, $art_id){
+        $this->user_id= $user_id;
+        $this->article_id= $art_id;
+        $this->comment= $request->input('comment');
+        $this->save();
+    }
+
 
     public function user(){
         return $this->belongsTo('App\User');

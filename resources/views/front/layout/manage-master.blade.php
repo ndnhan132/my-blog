@@ -25,26 +25,28 @@
                     </li>
                 </form>
             </ul>
-            <ul class="list-group rounded-0 pt-4 px-2">
-                <li class="list-group-item py-2 manage__title rounded-0">
-                    <span class="text-white">
-                       <i class="fas fa-bars pr-1"></i>
-                        Bai viet
-                    </span>
-                </li>
-                <a href="http://localhost:6789/manage/article/info">
-                    <li class="list-group-item rounded-0">Chung</li>
-                </a>
-                <a href=" http://localhost:6789/manage/article/new">
-                    <li class="list-group-item rounded-0">Dang bai</li>
-                </a>
-                <a href="http://localhost:6789/manage/article/manage">
-                    <li class="list-group-item rounded-0">Quan ly</li>
-                </a>
-                <a href="">
-                    <li class="list-group-item rounded-0">Khac</li>
-                </a>
-            </ul>
+            @if(Cookie::get('user_role_cookie') === 'author')
+                <ul class="list-group rounded-0 pt-4 px-2">
+                    <li class="list-group-item py-2 manage__title rounded-0">
+                        <span class="text-white">
+                           <i class="fas fa-bars pr-1"></i>
+                            Bai viet
+                        </span>
+                    </li>
+                    <a href="http://localhost:6789/manage/article/info">
+                        <li class="list-group-item rounded-0">Chung</li>
+                    </a>
+                    <a href=" http://localhost:6789/manage/article/new">
+                        <li class="list-group-item rounded-0">Dang bai</li>
+                    </a>
+                    <a href="http://localhost:6789/manage/article/manage">
+                        <li class="list-group-item rounded-0">Quan ly</li>
+                    </a>
+                    <a href="">
+                        <li class="list-group-item rounded-0">Khac</li>
+                    </a>
+                </ul>
+            @endif
         </div>
         <div class="col-9 ">
             @section('manage-content')

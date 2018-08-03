@@ -7,10 +7,7 @@
             <input type="text" class="form-control rounded-0" id="" name="title">
         </div>
         <div class="form-group">
-            {{--<label for="">Img description</label>--}}
-            {{--<input type="text" class="form-control rounded-0" id="" name="img">--}}
-
-
+            <label for="">Img description</label>
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
@@ -21,15 +18,9 @@
                 </div>
             @endif
 
-            <input data-preview="#preview" name="input_img" type="file" id="imageInput">
-            <img class="col-sm-6" id="preview"  src="" ></img>
+            <input name="input_img" type="file" id="" onchange="readURL(this);">
+            <img class="col-sm-6 preview" id="preview"  src=" " alt="img"></img>
             {{--  <p class="help-block">Example block-level help text here.</p>  --}}
-
-            {{--{{Form::open(['route' => 'user.store', 'files' => true])}}--}}
-            {{--{{Form::label('user_photo', 'User Photo',['class' => 'control-label'])}}--}}
-            {{--{{Form::file('user_photo')}}--}}
-            {{--{{Form::submit('Save', ['class' => 'btn btn-success'])}}--}}
-            {{--{{Form::close()}}--}}
 
         </div>
         <div class="form-group">

@@ -5,7 +5,7 @@
         <input type="hidden" name="_method" value="post" />{{csrf_field()}}
         <div class="form-group">
             <label for="exampleInputUsername">UserName</label>
-            <input type="text" class="form-control" id="register-username" name="rusername"
+            <input type="text" class="form-control" id="register-username" name="username"
                    placeholder="Username" value="{{old('username')}}">
             <small id="error-username" class="form-text text-danger"></small>
         </div>

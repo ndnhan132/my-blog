@@ -1,8 +1,5 @@
 @extends('front.layout.manage-master')
 @section('manage-content')
-    {{--@php--}}
-        {{--$user_cookie = Cookie::get('user_cookie')--}}
-    {{--@endphp--}}
     <div class="manage-profile">
         <div class="pt-4 border-bottom border-secondary rounded-bottom">
                 <span class="text-uppercase p-1 text-dark">
@@ -12,10 +9,7 @@
         </div>
         <div class="d-flex pt-2">
             <div class="col-4 border">
-                <img class="img-fluid mt-3 border w-100"  src="{{$user->img}}" alt="">
-                <form action="">
-                    <input class="btn" type="file" />
-                </form>
+                <img class="img-fluid mt-3 border w-100"  src="{{$user->img}}" alt=" chua cap nhat hinh anh dai dien">
             </div>
             <div class="col-8">
                 <ul>

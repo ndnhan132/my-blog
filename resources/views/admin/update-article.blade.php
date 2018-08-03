@@ -16,9 +16,8 @@
                     </ul>
                 </div>
             @endif
-
-            <input data-preview="#preview" name="input_img" type="file" id="imageInput" value="{{$article->img}}">
-            <img class="col-sm-6" id="preview"  src="" ></img>
+            <input data-preview="#preview" name="input_img" type="file" id="" onchange="readURL(this)" value="{{$article->img}}">
+            <img class="col-sm-6 preview" id="preview"  src="{{$article->img}}" ></img>
             {{--  <p class="help-block">Example block-level help text here.</p>  --}}
         </div>
         <div class="form-group">

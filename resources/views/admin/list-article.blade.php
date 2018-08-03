@@ -11,9 +11,11 @@
                         <form class="form-inline admin__header__search px-2" method="get" action="{{route('search-article')
                         }}">
                         @include('admin.layout.search-form')
-                        <button type="button" class="btn btn-link ml-auto">
-                            <i class="fas fa-plus-circle" style="font-size: 24px"></i>
-                        </button>
+                        <form action="{{route('get-add-new-article')}}" method="get">
+                            <button type="submit" class="btn btn-link ml-auto">
+                                <i class="fas fa-plus-circle" style="font-size: 24px"></i>
+                            </button>
+                        </form>
                     </div>
                 </li>
                 @php
@@ -21,22 +23,26 @@
                 @endphp
                 @foreach($articles as $article)
                     <li class="list-group-item text-dark rounded-0 d-flex justify-content-between">
-                        <span class="border-right" style="width: 40px">
+                        <span class="border-right" style="width: 35px">
                             {{++$count}}
                         </span>
-                        <span class="col-8 border-right">
+                        <span class="col-6 border-right">
                             {{$article->title}}
                         </span>
-                        <span class="col-2 border-right">
+                        <span class="col-3 border-right">
                             {{$article->user->name}}
+                        </span>
+                        <span class="d-flex justify-content-md-around" >
+                            <i class="fas fa-eye text-secondary px-3"></i>
+                            {{$article->view}}
                         </span>
 
                         <div class=" d-flex ml-auto align-content-center">
-                            {{-- <form action="" method="get" class="px-2">
+                            <form action="{{route('article-detail',$article->id)}}" method="get" class="px-2">
                                 <button class="btn btn-primary rounded-0 btn-sm">
                                     <i class="fas fa-angle-double-right"></i>
                                 </button>
-                            </form> --}}
+                            </form>
                             {{--<form action=""method="" class="px-2">--}}
                                 {{--<button class="btn btn-info rounded-0 btn-sm">--}}
                                     {{--<i class="far fa-edit"></i>--}}

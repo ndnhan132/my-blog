@@ -19,10 +19,8 @@ class CreateArticlesTable extends Migration
             $table->integer('user_id');
             $table->text('content');
             $table->string('img');
-            $table->integer('view');
-            $table->integer('like');
-            $table->integer('report');
-            $table->integer('dislike');
+            $table->integer('view')->default(0);
+            $table->integer('like')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

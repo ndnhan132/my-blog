@@ -31,9 +31,9 @@
         <img src="{{$article->img}}" class="px-5 w-100" alt="">
     </div>
     <div class="col-12 pt-4">
-        <p>
-            {{$article->content}}
-        </p>
+        @php
+            echo $article->content
+        @endphp
     </div>
 </div>
 <div class="border mt-4">

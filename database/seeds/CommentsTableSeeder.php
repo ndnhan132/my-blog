@@ -27,7 +27,7 @@ class CommentsTableSeeder extends Seeder
         ];
 
         $faker= Faker::create();
-        foreach (range(1,100) as $index){
+        foreach (range(1,30) as $index){
             foreach ($comments as $comment) {
                 Comment::create ([
                     'user_id'=> $faker->randomElement($users->pluck('id')->toArray()),

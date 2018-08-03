@@ -38,7 +38,33 @@ class ArticleController extends Controller
         $article->deleteArticle($id);
         return redirect()->back();
     }
-    public function addNewArticle(){}
+    public function getAddNewArticle(){
+        return view('admin.add-new-article');
+    }
+    public function postAddNewArticle(Request $request){
+//        dd('ad');
+//        if ($request->hasFile('input_img')) {
+//            if($request->file('input_img')->isValid()) {
+//                try {
+//                    $file = $request->file('input_img');
+//        $photoName = time().'.'.$request->user_photo->getClientOriginalExtension();
+//        $request->user_photo->move(public_path('avatars'), $photoName);
+//                } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+//
+//                }
+//            }
+//        }
+
+
+
+
+
+//        $id= $request->cookie('user_id_cookie');
+//        $article= new Article();
+//        $article->saveArticle($request, $id);
+//        return redirect()->route('list-article');
+
+    }
     public function searchArticle(Request $request){
         $articles = Article::search($request->input('search'))->get();
         return view('admin.list-article', ['articles'=>$articles]);

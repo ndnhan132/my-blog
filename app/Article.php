@@ -28,6 +28,14 @@ class Article extends Model
             $com->delete();
         }
     }
+    public function saveArticle($request, $id){
+        $this->title= $request->input('title');
+        $this->content= $request->input('txtContent');
+        $this->user_id= $id;
+        $this->img = '';
+//        $this->img = $request->input('img');
+        $this->save();
+    }
 
 
 

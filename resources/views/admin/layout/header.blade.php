@@ -18,7 +18,7 @@
                 </li>
             </ul>
         </div>
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
             {{--<form class="form-inline admin__header__search px-2" method="get" action="">--}}
               {{--@include('admin.layout.search-form')--}}
                 {{--<a class="nav-link btn rounded-circle admin__header__notify px-2">--}}
@@ -31,9 +31,12 @@
                     <img width="35" height="35" src="{{$user_img_cookie}}" class="img-fluid rounded-circle border"
                          alt="">
                 </a>
-                <span class="nav-link btn rounded-circle pl-2 pr-5 text-white text-capitalize">
+                <span class="nav-link btn px-2 text-white text-capitalize">
                     {{$user_name_cookie}}
                 </span>
+            <form action="{{route('logout')}}" method="get">
+                <button class="btn btn-link text-white border-left rounded-0">dang xuat</button>
+            </form>
         </div>
     </nav>
 </div>

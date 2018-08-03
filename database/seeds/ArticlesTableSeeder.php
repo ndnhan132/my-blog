@@ -27,8 +27,8 @@ class ArticlesTableSeeder extends Seeder
                 'img'=>$faker->imageUrl($width = 640, $height = 480),
                 'view'=>$faker->numberBetween($min = 1, $max = 9000),
                 'like'=>$faker->numberBetween($min = 1, $max = 9000),
-                'report'=>$faker->numberBetween($min = 1, $max = 9000),
-                'dislike'=>$faker->numberBetween($min = 1, $max = 9000),
+//                'report'=>$faker->numberBetween($min = 1, $max = 9000),
+//                'dislike'=>$faker->numberBetween($min = 1, $max = 9000),
             ]);
         }
     }

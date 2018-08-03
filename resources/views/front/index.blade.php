@@ -23,17 +23,9 @@
                         <i class="fas fa-heart"></i>
                         {{$article->like}}
                     </button>
-                    <button class="bg-transparent border-0 text-secondary">
-                        <i class="fas fa-thumbs-down"></i>
-                        {{$article->dislike}}
-                    </button>
                     <button class="bg-transparent border-0 text-primary">
                         <i class="fas fa-eye"></i>
                         {{$article->view}}
-                    </button>
-                    <button class="bg-transparent border-0 text-warning">
-                        <i class="far fa-flag"></i>
-                        {{$article->report}}
                     </button>
                 </div>
             </div>

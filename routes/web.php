@@ -44,7 +44,8 @@ Route::prefix('/admin')->group(function () {
         Route::get('/list', 'ArticleController@getListArticle')->name('list-article');
         // Route::get('/detail/{id}', 'ArticleController@userDetail')->name('user-detail');
         Route::delete('/delete/{id}', 'ArticleController@articleDelete')->name('article-delete');
-        Route::post('/add-new', 'ArticleController@addNewArticle')->name('add-new-article');
+        Route::get('/add-new', 'ArticleController@getAddNewArticle')->name('get-add-new-article');
+        Route::post('/add-new', 'ArticleController@postAddNewArticle')->name('post-add-new-article');
         Route::get('/seach-article', 'ArticleController@searchArticle')->name('search-article');
     });
     Route::prefix('/as')->group(function () {

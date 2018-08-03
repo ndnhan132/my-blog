@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
         $faker= Faker::create();
         User::create([
             'name'=>'dinh nhan',
-            'username'=>'nhan',
+            'username'=>'admin',
             'email'=>'nhan@asd.con',
             'password'=>bcrypt('123'),
             'birthday'=>$faker->date($format = 'Y-m-d', $max = 'now'),

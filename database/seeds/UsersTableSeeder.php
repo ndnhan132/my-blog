@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
             'gender'=>'0',
             'phone'=>'1212121212',
             'address'=>'Viet nam',
-            'img'=>$faker->imageUrl($width = 640, $height = 480),
+            'img'=>'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStuuB7ahwgQWlL-7LxMqpbU_BavHDDiGG0ymG1RSM1r9lXbeb7',
             'description'=>'Of course, you may not always want to select all columns from a database table.'
          ]);
 

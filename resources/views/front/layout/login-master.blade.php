@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login/Register</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
@@ -55,12 +55,8 @@
 
     {{--login user--}}
 
-    <form action="{{route('home')}}" method="get">
-        <button class="btn btn-info">Home
-            <span class="sr-only">(current)</span>
-        </button>
-    </form>
-    <div class="mx-auto col-4 bg-success">
+
+    <div class="mx-auto col-4 text-center">
         @section('form-content')
 
         @show

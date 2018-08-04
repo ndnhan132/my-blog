@@ -13,7 +13,7 @@
             </div>
             <div class="col-8">
                 <ul class=" mt-2">
-                    <li>Tac gia: sdsdd</li>
+                    <li>Tac gia: </li>
                     <li>So bai viet:12</li>
                     <li>Tong so luot xem: 12323</li>
                     <li>Ua thich: 123123</li>

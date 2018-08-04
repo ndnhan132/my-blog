@@ -1,45 +1,3 @@
-{{--register--}}
-{{-- @if(session()->has('register_data'))
-    @if(session()->get('register_data'))
-        <div class="d-flex w-25 mx-auto bg-success justify-content-center fixed-top">
-        <span class="text-white">
-        dk tc
-        </span>
-        </div>
-    @elseif(!session()->get('register_data'))
-        <div class="d-flex w-25 mx-auto bg-danger justify-content-center fixed-top">
-        <span class="text-white">
-        dk ko tc
-        </span>
-        </div>
-        @else
-            <div></div>
-    @endif
-@else
-    <div></div>
-@endif
-
-{{--login--}}
-{{-- @if(session()->get('login_data'))
-    <div class="d-flex w-25 mx-auto bg-success justify-content-center fixed-top">
-        <span class="text-white">
-        dang nhap tc
-        </span>
-    </div>
-@elseif(!session()->get('login_data'))
-    <div class="d-flex w-25 mx-auto bg-danger justify-content-center fixed-top">
-        <span class="text-white">
-        dang nhap that bai
-        </span>
-    </div>
-    @else
-    <div></div>
-    @endif
-@else
-    <div></div>
-@endif --}}
-
-{{--login user--}}
 
 @php
     $user_id_cookie = Cookie::get('user_id_cookie');
@@ -49,16 +7,28 @@
 
 
 <div class="d-flex flex-row mt-2 align-items-center">
-    <div class="col-6 d-flex justify-content-end text-secondary p-0 text-dark h1">FUN</div>
+    <div class="col-6 d-flex justify-content-end text-secondary p-0">
+        <form action="{{route('home')}}" method="get">
+            <button class="text-dark font-italic btn btn-link">
+                <h1>
+                    MyBlog
+                </h1>
+            </button>
+        </form>
+    </div>
+
+
 
     @if(isset($user_id_cookie))
         <div class="col-6 d-flex justify-content-end text-secondary align-items-center p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{$user_name_cookie}}
+                            <a class="nav-link dropdown-toggle text-capitalize border-bottom" href="#" id="navbarDropdown"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Chào {{$user_name_cookie}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @if($user_role_cookie === 'admin')
@@ -66,13 +36,12 @@
                                         <button class="btn btn-link dropdown-item">Admin</button>
                                 @else
                                     <form action="{{route('user-profile')}}" method="get">
-                                        <button class="btn btn-link dropdown-item">Nguoi dung</button>
+                                        <button class="btn btn-link dropdown-item">Hồ sơ</button>
                                 @endif
                                     </form>
-                                    <a class="dropdown-item" href="#">Another action</a>
                                     <div class="dropdown-divider"></div>
                                     <form action="{{route('logout')}}" method="get">
-                                        <button class="btn btn-link dropdown-item">dang xuat</button>
+                                        <button class="btn btn-link dropdown-item">Đăng xuất</button>
                                     </form>
                             </div>
                         </li>
@@ -83,10 +52,10 @@
     @else
         <div class="col-6 d-flex justify-content-end text-secondary align-items-center p-0">
             <form action="{{route('get-login')}}">
-                <button class="btn btn-sm btn-secondary rounded-0 border-right">login</button>
+                <button class="btn btn-sm btn-link rounded-0 border-right">Đăng nhập</button>
             </form>
             <form action="{{route('register')}}">
-                <button class="btn btn-sm btn-secondary rounded-0">register</button>
+                <button class="btn btn-sm btn-link rounded-0">Đăng ký</button>
             </form>
         </div>
     @endif

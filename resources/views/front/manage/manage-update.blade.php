@@ -7,7 +7,7 @@
     <div class="pt-4 border-bottom border-secondary rounded-bottom">
         <span class="text-uppercase p-1 text-dark">
             <i class="fas fa-pen-fancy"></i>
-            Cap nhat thong tin
+            Cập nhật thông tin
         </span>
     </div>
     <form class="d-flex flex-column py-4 border mt-4" action="{{route('user-update')}}" method="post" enctype="multipart/form-data">
@@ -20,15 +20,15 @@
             </div>
             <div class="col-8">
                 <div class="form-group d-flex">
-                    <label for="" class="col-3">ho va ten</label>
+                    <label for="" class="col-3">Tên :</label>
                     <input type="text" class="form-control col-9 rounded-0" name="name" value="{{$user->name}}">
                 </div>
                 <div class="form-group d-flex">
-                    <label for="" class="col-3">ngay sinh</label>
+                    <label for="" class="col-3">Ngày sinh</label>
                     <input type="date" class="form-control col-9 rounded-0" name="birthday" value="{{$user->birthday}}">
                 </div>
                 <div class="form-group d-flex">
-                    <label for="" class="col-3">Gioi tinh</label>
+                    <label for="" class="col-3">Giới tính</label>
                     <div class="form-check form-check-inline col-6 d-flex justify-content-between">
                         <input class="form-check-input" type="radio" name="gender" id="" value="male" {{
                             ($user->gender ==='0') ? 'checked' : ''}}>
@@ -45,15 +45,15 @@
                     <input type="email" class="form-control col-9 rounded-0" name="email" value="{{$user->email}}">
                 </div>
                 <div class="form-group d-flex">
-                    <label for="" class="col-3">Sdt</label>
+                    <label for="" class="col-3">Điện thoại</label>
                     <input type="text" class="form-control col-9 rounded-0" name="phone" value="{{$user->phone}}">
                 </div>
                 <div class="form-group d-flex">
-                    <label for="" class="col-3">dia chi</label>
+                    <label for="" class="col-3">Địa chỉ</label>
                     <input type="text" class="form-control col-9 rounded-0" name="address" value="{{$user->address}}">
                 </div>
                 <div class="form-group d-flex">
-                    <label for="" class="col-3">Gioi thieu ban than</label>
+                    <label for="" class="col-3">Giới thiệu bản thân</label>
                     <textarea class="form-control col-9 rounded-0" name="description" id="" cols="30"
                               rows="4">{{$user->description}}</textarea>
                 </div>

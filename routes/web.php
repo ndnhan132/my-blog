@@ -14,6 +14,10 @@ use Illuminate\Cookie;
 
 Route::get('/', 'ArticleController@home')->name('home');
 Route::get('/home', 'ArticleController@home')->name('home');
+Route::get('/contact', 'ArticleController@contact')->name('contact');
+Route::get('/search', 'ArticleController@searchAllArticle')->name('search-all-article');
+Route::get('/new', 'ArticleController@getNewArticle')->name('get-new-article');
+Route::get('/hot', 'ArticleController@getTopArticle')->name('get-top-article');
 Route::get('/{id}/detail', 'ArticleController@detail')->name('article-detail');
 
 Route::get('/register', 'UserController@create')->name('register');
@@ -31,6 +35,12 @@ Route::prefix('/manage')->group(function () {
     Route::get('/account', 'UserController@account')->name('user-account');
     Route::put('/account/update/{id}', 'UserController@accountUpdate')->name('user-password-update');
     Route::delete('/account/delete/{id}', 'UserController@accountDelete')->name('user-account-delete');
+    Route::get('/list-article', 'ArticleController@getMyArticle')->name('get-my-article');
+    Route::get('/add-new', 'ArticleController@getAddMyArticle')->name('get-add-user-article');
+    Route::post('/add-new', 'ArticleController@postAddMyArticle')->name('post-add-user-article');
+    Route::get('/seach-article', 'ArticleController@searchMyArticle')->name('search-my-article');
+    Route::get('/edit/{id}', 'ArticleController@getUserEdit')->name('get-edit-my-article');
+    Route::put('/update/{id}', 'ArticleController@userUpdateArticle')->name('user-update-article');
 });
 Route::prefix('/admin')->group(function () {
     Route::get('/','UserController@dashboard')->name('admin');
@@ -51,7 +61,5 @@ Route::prefix('/admin')->group(function () {
         Route::get('/seach-article', 'ArticleController@searchArticle')->name('search-article');
         Route::get('/edit/{id}', 'ArticleController@getEdit')->name('get-edit-article');
         Route::put('/update/{id}', 'ArticleController@updateArticle')->name('update-article');
-    });
-    Route::prefix('/as')->group(function () {
     });
 });

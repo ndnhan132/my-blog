@@ -4,13 +4,13 @@
     <div class="pt-4 border-bottom border-secondary rounded-bottom">
         <span class="text-uppercase p-1 text-dark">
             <i class="fas fa-wrench"></i>
-            Quan ly tai khoan
+            Quản lý tài khoản
         </span>
     </div>
     <div class="mt-4">
         <span class="text-uppercase p-1 text-primary">
             <i class="fas fa-key"></i>
-            Thay doi mat khau
+            Thay đổi mật khẩu
         </span>
     </div>
     <form action="{{route('user-password-update', Cookie::get('user_id_cookie'))}}" method="post" class="mt-3 border border-primary col-6 rounded">
@@ -21,14 +21,14 @@
             <input type="password" class="form-control mt-3" name="new-password" value="" placeholder="mat khau moi">
             <input type="password" class="form-control mt-3" name="renew-password" value="" placeholder="nhap lai mat
             khau">
-            <button type="submit" class="btn btn-outline-primary mx-5 mt-4 mb-1 rounded-0" >Cap nhat</button>
+            <button type="submit" class="btn btn-outline-primary mx-5 mt-4 mb-1 rounded-0" >Cập nhật</button>
         </div>
 
     </form>
     <div class="mt-4">
         <span class="text-uppercase p-1 text-danger">
             <i class="fas fa-exclamation-triangle"></i>
-            tai khoan
+            Tài khoản
         </span>
     </div>
     <div class="mt-3 border border-danger col-6 rounded">

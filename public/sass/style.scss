@@ -1,4 +1,9 @@
 $box-color: #29475B;
+body{
+  background-image: url("http://thepresentwriter.com/wp-content/themes/modern-studio-pro/images/bg.png");
+  background-size: auto;
+  background-repeat: repeat;
+}
 
 .home-content {
   $caption-color: #81ffdf;
@@ -106,7 +111,7 @@ $box-color: #29475B;
     background: $green;
   }
   &__menu-left{
-    height: 75vh;
+    height: 100vh;
     &--bg-dark{
       background: #2A3F54;
     }

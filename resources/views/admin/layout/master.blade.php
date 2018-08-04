@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 </head>
-<body style=" padding-top: 52px; background:#eee;">
+<body style="">
     @php
         $user_id_cookie = Cookie::get('user_id_cookie');
         $user_name_cookie = Cookie::get('user_name_cookie');
@@ -21,7 +21,7 @@
             @include('admin.layout.header')
         </div>
         <div class="container-fluid px-0">
-            <div class="d-flex">
+            <div class="d-flex mt-5">
                 <div class="col-2 p-0 admin admin__menu-left admin__menu-left--bg-dark">
                     @include('admin.layout.menu-left')
                 </div>
@@ -34,7 +34,7 @@
         </div>
     @else
         <div class="container-fluid d-flex flex-column">
-            <h1 class="font-weight-normal text-black-50 text-center mt-5">Het thoi han dang nhap</h1>
+            <h1 class="font-weight-normal text-black-50 text-center mt-5">Hết thời hạn đăng nhập</h1>
             <a href="{{route('home')}}" class="text-center">home</a>
         </div>
     @endif

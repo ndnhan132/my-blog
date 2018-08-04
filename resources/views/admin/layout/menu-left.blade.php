@@ -4,18 +4,10 @@
             <button class="btn btn-block rounded-0 text-white admin__menu-left--bg-dark admin__button--outline-none
         text-left ">
                 <i class="fas fa-tachometer-alt"></i>
-                Dashboard
+                Thống kê
             </button>
         </form>
     </li>
-    {{-- <li class="border-0 rounded-0 list-group-item p-0">
-        <form action="http://localhost:6789/admin/profile">
-            <button class="btn btn-block rounded-0  text-white admin__menu-left--bg-dark admin__button--outline-none text-left ">
-                <i class="far fa-user"></i>
-                My Profile
-            </button>
-        </form>
-    </li> --}}
     <li class="border-0 rounded-0 list-group-item p-0" id="user-manager">
         <form action="{{route('list-user')}}" method="get">
             <button class="btn btn-block rounded-0  text-white admin__menu-left--bg-dark admin__button--outline-none text-left " data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
@@ -32,21 +24,5 @@
             </button>
         </form>
     </li>
-    {{-- <li class="border-0 rounded-0 list-group-item p-0">
-        <form action="http://localhost:6789/admin/mailbox">
-            <button class="btn btn-block rounded-0  text-white admin__menu-left--bg-dark admin__button--outline-none text-left ">
-                <i class="far fa-envelope"></i>
-                Mailbox
-            </button>
-        </form>
-    </li> --}}
-    {{-- <li class="border-0 rounded-0 list-group-item p-0">
-        <form action="http://localhost:6789/admin/table">
-            <button class="btn btn-block rounded-0  text-white admin__menu-left--bg-dark admin__button--outline-none text-left ">
-                <i class="fas fa-table"></i>
-                Basic Tables
-            </button>
-        </form>
-    </li> --}}
 
 </ul>

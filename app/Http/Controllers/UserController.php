@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\User;
 use App\Role;
 use Illuminate\Http\Request;
@@ -133,7 +134,12 @@ class UserController extends Controller
 
 //    admin
     public function dashboard(){
-        return view('admin.index');
+        $allUsers= User::with('roles')->get();
+        $allArticles =Article::with('user')->get();
+        return view('admin.index',[
+            'allUsers'=>$allUsers,
+            'allArticles'=>$allArticles,
+        ]);
     }
     public function getListUser(){
         $users= User::with('roles')->get();

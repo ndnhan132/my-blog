@@ -1,3 +1,8 @@
+body {
+  background-image: url("http://thepresentwriter.com/wp-content/themes/modern-studio-pro/images/bg.png");
+  background-size: auto;
+  background-repeat: repeat; }
+
 .home-content__left__post__vote {
   font-size: 13px;
   position: relative;
@@ -45,7 +50,7 @@
 .admin--bg-green {
   background: #3c763d; }
 .admin__menu-left {
-  height: 75vh; }
+  height: 100vh; }
   .admin__menu-left--bg-dark {
     background: #2A3F54; }
   .admin__menu-left--bg-darklight {
@@ -65,11 +70,5 @@
     position: relative;
     bottom: 12px;
     right: 16px; }
-body {
-  background-image: url('img/bg.png');
-  background-position: left top;
-  background-size: auto;
-  background-repeat: repeat;
-  background-attachment: fixed;
-}
+
 /*# sourceMappingURL=style.css.map */

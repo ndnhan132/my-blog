@@ -5,7 +5,7 @@
             <ul class="list-group p-5">
                 <li class="d-flex list-group-item list-group-item-success rounded-0 py-0 align-items-center">
                     <span class="text-center text-dark text-uppercase">
-                        Danh sach thanh vien
+                        Danh sách thành viến
                     </span>
                     <div class="d-flex ml-auto">
                         <form class="form-inline admin__header__search px-2" method="get" action="{{route('search-user')

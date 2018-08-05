@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="form-group d-flex">
-                    <label for="" class="col-3">email</label>
+                    <label for="" class="col-3">Email</label>
                     <input type="email" class="form-control col-9 rounded-0" name="email" value="{{$user->email}}">
                 </div>
                 <div class="form-group d-flex">

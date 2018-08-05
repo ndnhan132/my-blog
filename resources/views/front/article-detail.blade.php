@@ -1,6 +1,9 @@
 @extends('front.layout.content')
 @section('articles-content')
-    <?php use Carbon\Carbon;?>
+    <?php
+        use Carbon\Carbon;
+        $user_id_cookie= Cookie::get('user_id_cookie');
+    ?>
 <div class="border">
     <div class="col-12 mt-4">
         <h4 class="text-center">
@@ -43,7 +46,7 @@
                     <input type="hidden" name="_method" value="post" />
                     {{ csrf_field() }}
                 <textarea class="col-11" name="comment" id="" cols="30" rows="2"></textarea>
-                <button class="btn btn-link">
+                <button class="btn btn-link" {{(!isset($user_id_cookie)) ? 'disabled' : ''}}>
                     <i class="fas fa-check text-success" style="font-size: 40px"></i>
                 </button>
             </form>
